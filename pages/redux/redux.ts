@@ -30,6 +30,9 @@ const newtabSlice = createSlice({
 })
 
 export const { search } = newtabSlice.actions
-export const store = configureStore({
+
+const store = configureStore({
   reducer: newtabSlice.reducer
 })
+
+export default store

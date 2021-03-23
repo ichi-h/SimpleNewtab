@@ -1,22 +1,41 @@
 // import Head from 'next/head'
 
-import { SearchBox } from './components/SearchBox'
-import { LinkItems } from './components/LinkItems'
-import { SettingsButton } from './components/SettingsButton'
-import { Popup } from './components/Popup'
-import { store } from './redux/redux'
+import SearchBox from './components/SearchBox'
+import LinkItems from './components/LinkItems'
+import SettingsButton from './components/SettingsButton'
+import Popup from './components/Popup'
+import store from './redux/redux'
 
-import  '../styles/Home.module.css'
+import styles from '../styles/Home.module.css'
+
+function getWindowSize(): [number, number] {
+  if (process.browser) {
+    const { innerWidth: width, innerHeight: height } = window
+    return [width, height]
+  }
+  else {
+    throw 'aaa'
+  }
+}
 
 export default function Home() {
+  const [width, height] = getWindowSize()
+
   const isShow = store.getState().isShow
+  const zIndex = store.getState().zIndex
 
   return (
-    <div className="newtab">
+    <div
+      className={styles.newtab}
+      style = {{
+        width: width,
+        height: height
+      }}
+    >
 
-      <Popup isShow={isShow} />
+      <Popup isShow={isShow} zIndex={zIndex} />
 
-      <div className="content">
+      <div className={styles.content}>
         <SearchBox />
         <LinkItems />
       </div>
