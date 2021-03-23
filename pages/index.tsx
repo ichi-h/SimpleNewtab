@@ -1,21 +1,16 @@
 // import Head from 'next/head'
 
-import SearchBox from './components/SearchBox'
-import LinkItems from './components/LinkItems'
-import SettingsButton from './components/SettingsButton'
-import Popup from './components/Popup'
-import store from './redux/redux'
+import SearchBox from '../components/SearchBox'
+import LinkItems from '../components/LinkItems'
+import SettingsButton from '../components/SettingsButton'
+import Popup from '../components/Popup'
+import store from '../lib/redux'
 
 import styles from '../styles/Home.module.css'
 
 function getWindowSize(): [number, number] {
-  if (process.browser) {
-    const { innerWidth: width, innerHeight: height } = window
-    return [width, height]
-  }
-  else {
-    throw 'aaa'
-  }
+  const { innerWidth: width, innerHeight: height } = window
+  return [width, height]
 }
 
 export default function Home() {

@@ -1,6 +1,6 @@
-import { Visibility } from '../redux/redux'
+import { Visibility } from '../lib/redux'
 
-import styles from '../../styles/Home.module.css'
+import styles from '../styles/Home.module.css'
 
 interface PopupProps {
   isShow: Visibility,
