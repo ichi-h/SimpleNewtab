@@ -7,7 +7,8 @@ const newtabSlice = createSlice({
   initialState: {
     bg: '',
     items: '',
-    isShow: 'hidden' as Visibility
+    isShow: 'visible' as Visibility,
+    zIndex: -1
   },
   reducers: {
     search: state => {},
@@ -16,10 +17,12 @@ const newtabSlice = createSlice({
       switch (state.isShow) {
         case 'hidden':
           state.isShow = 'visible'
+          state.zIndex = 100
           break
 
         case 'visible':
           state.isShow = 'hidden'
+          state.zIndex = -1
           break
       }
     },

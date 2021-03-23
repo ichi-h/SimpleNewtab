@@ -1,12 +1,23 @@
 import { Visibility } from '../redux/redux'
 
-export const Popup = (props: { isShow: Visibility }) => {
+import styles from '../../styles/Home.module.css'
+
+interface PopupProps {
+  isShow: Visibility,
+  zIndex: number
+}
+
+const Popup: React.FC<PopupProps> = (props) => {
   return (
     <div
-      className="popup"
-      style={{ visibility: props.isShow }}
+      className={styles.popup}
+      style={{
+        visibility: props.isShow,
+        zIndex: props.zIndex
+      }}
     >
-      <p>Popup</p>
     </div>
   )
 }
+
+export default Popup
