@@ -1,4 +1,4 @@
-import { Visibility } from '../lib/redux'
+import { Visibility } from '../lib/newtabSlice'
 
 import styles from '../styles/Home.module.css'
 
@@ -16,6 +16,7 @@ const Popup: React.FC<PopupProps> = (props) => {
         zIndex: props.zIndex
       }}
     >
+      <p>popup</p>
     </div>
   )
 }
