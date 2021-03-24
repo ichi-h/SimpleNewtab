@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export type Visibility = 'hidden' | 'visible'
+export type Display = 'none' | 'initial'
 
 interface Items {
   name: string,
@@ -10,14 +10,14 @@ interface Items {
 interface NewtabState {
   bg: string,
   items: Items[],
-  isShow: Visibility,
+  isShow: Display,
   zIndex: number
 }
 
 const initialState: NewtabState = {
   bg: '',
   items: [] as Items[],
-  isShow: 'hidden',
+  isShow: 'none',
   zIndex: -1
 }
 
@@ -32,13 +32,13 @@ export const newtabSlice = createSlice({
 
     togglePopup: state => {
       switch (state.isShow) {
-        case 'hidden':
-          state.isShow = 'visible'
+        case 'none':
+          state.isShow = 'initial'
           state.zIndex = 100
           break
 
-        case 'visible':
-          state.isShow = 'hidden'
+        case 'initial':
+          state.isShow = 'none'
           state.zIndex = -1
           break
       }

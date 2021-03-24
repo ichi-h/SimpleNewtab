@@ -22,12 +22,6 @@
 }
 
 .settings {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-
   width: 50%;
   height: 50%;
 
@@ -35,3 +29,60 @@
 
   z-index: 200;
 }
+
+  .settingsTop {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    width: 100%;
+    height: 45vh;
+  }
+
+    .settingsLeft {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      font-size: 2.5rem;
+
+      border: 1px solid #000;
+    }
+
+      .settingsRadio ul {
+        list-style: none;
+      }
+
+      .settingsBGRadio,
+      .settingsLinkRadio {
+        display: none;
+      }
+    
+    .settingsRight {
+      position: relative;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      font-size: 3rem;
+
+      border: 1px solid #000;
+    }
+
+      .settingsBGContent,
+      .settingsLinkContent {
+        position: absolute;
+      }
+
+  .settingsBottom {
+    width: 100%;
+    height: 10%;
+  }
+
+    .settingsButton {
+      text-align: right;
+      font-size: 3rem;
+    }
