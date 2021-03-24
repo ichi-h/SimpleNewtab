@@ -1,6 +1,7 @@
-import { Visibility } from '../lib/newtabSlice'
+import { useAppDispatch } from '../lib/hooks'
+import { Visibility, togglePopup } from '../lib/newtabSlice'
 
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Popup.module.css'
 
 interface PopupProps {
   isShow: Visibility,
@@ -8,6 +9,9 @@ interface PopupProps {
 }
 
 const Popup: React.FC<PopupProps> = (props) => {
+  const dispatch = useAppDispatch()
+  const closeButtonCallback = () => dispatch(togglePopup())
+
   return (
     <div
       className={styles.popup}
@@ -16,7 +20,16 @@ const Popup: React.FC<PopupProps> = (props) => {
         zIndex: props.zIndex
       }}
     >
-      <p>popup</p>
+      <div className={styles.outerSettings}>
+        <div className={styles.settings}>
+          <p>popup</p>
+          <input
+            type="button"
+            value="close"
+            onClick={closeButtonCallback}
+          />
+        </div>
+      </div>
     </div>
   )
 }

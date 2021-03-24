@@ -1,4 +1,4 @@
-import { useAppSelector, useAppDispatch } from '../lib/hooks'
+import { useAppDispatch } from '../lib/hooks'
 import { togglePopup } from '../lib/newtabSlice'
 
 import styles from '../styles/Home.module.css'
