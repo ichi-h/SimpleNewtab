@@ -10,15 +10,15 @@ interface Items {
 interface NewtabState {
   bg: string,
   items: Items[],
-  isShow: Display,
-  zIndex: number
+  popupDisplay: Display,
+  popupIndex: number
 }
 
 const initialState: NewtabState = {
   bg: '',
   items: [] as Items[],
-  isShow: 'none',
-  zIndex: -1
+  popupDisplay: 'none',
+  popupIndex: -1
 }
 
 export const newtabSlice = createSlice({
@@ -31,15 +31,15 @@ export const newtabSlice = createSlice({
     addItem: state => {},
 
     togglePopup: state => {
-      switch (state.isShow) {
+      switch (state.popupDisplay) {
         case 'none':
-          state.isShow = 'initial'
-          state.zIndex = 100
+          state.popupDisplay = 'initial'
+          state.popupIndex = 100
           break
 
         case 'initial':
-          state.isShow = 'none'
-          state.zIndex = -1
+          state.popupDisplay = 'none'
+          state.popupIndex = -1
           break
       }
     },

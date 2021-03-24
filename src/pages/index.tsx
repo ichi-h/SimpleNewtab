@@ -10,13 +10,13 @@ import { store } from '../lib/store'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const isShow = useAppSelector(state => state.isShow)
-  const zIndex = useAppSelector(state => state.zIndex)
+  const popupDisplay = useAppSelector(state => state.popupDisplay)
+  const popupIndex = useAppSelector(state => state.popupIndex)
 
   return (
     <div className={styles.newtab}>
 
-    <Popup isShow={isShow} zIndex={zIndex} />
+    <Popup popupDisplay={popupDisplay} popupIndex={popupIndex} />
 
     <div className={styles.content}>
       <SearchBox />

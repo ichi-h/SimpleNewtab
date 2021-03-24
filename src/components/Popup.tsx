@@ -5,8 +5,8 @@ import { Display, togglePopup } from '../lib/newtabSlice'
 import styles from '../styles/Popup.module.css'
 
 interface PopupProps {
-  isShow: Display,
-  zIndex: number
+  popupDisplay: Display,
+  popupIndex: number
 }
 
 const Popup: React.FC<PopupProps> = (props) => {
@@ -33,8 +33,8 @@ const Popup: React.FC<PopupProps> = (props) => {
     <div
       className={styles.popup}
       style={{
-        display: props.isShow,
-        zIndex: props.zIndex
+        display: props.popupDisplay,
+        zIndex: props.popupIndex
       }}
     >
       <div className={styles.outerSettings}>
