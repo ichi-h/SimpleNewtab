@@ -1,0 +1,22 @@
+.settingsBGContent,
+.settingsLinkContent {
+  position: absolute;
+}
+
+/* BGContent */
+.imageGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+}
+
+  .bgThumbnail {
+    width: 12vw;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+  }
+
+/* LinkContent  */

@@ -72,11 +72,6 @@
       border: 1px solid #000;
     }
 
-      .settingsBGContent,
-      .settingsLinkContent {
-        position: absolute;
-      }
-
   .settingsBottom {
     width: 100%;
     height: 10%;
