@@ -4,6 +4,7 @@ import { Display, togglePopup } from '../lib/newtabSlice'
 
 import BGContent from './Popup/BGContent'
 import LinkContent from './Popup/LinkContent'
+import ColorContent from './Popup/ColorContent'
 
 import styles from '../styles/Popup.module.css'
 
@@ -16,12 +17,12 @@ const Popup: React.FC = () => {
   const popupIndex = useAppSelector(state => state.popupIndex)
 
   const [contentDisplay, setContentDisplay] = useState(
-    ['initial', 'none'] as Display[]
+    ['initial', 'none', 'none'] as Display[]
   )
 
-  const onBGRadioClick = () => setContentDisplay(['initial', 'none'])
-
-  const onLinkRadioClick = () => setContentDisplay(['none', 'initial'])
+  const onBGRadioClick = () => setContentDisplay(['initial', 'none', 'none'])
+  const onLinkRadioClick = () => setContentDisplay(['none', 'initial', 'none'])
+  const onColorRadioClick = () => setContentDisplay(['none', 'none', 'initial'])
 
   const dispatch = useAppDispatch()
   const onCloseButtonClick = () => dispatch(togglePopup())
@@ -62,6 +63,16 @@ const Popup: React.FC = () => {
                     />
                     <label htmlFor="settings-link-radio">Links</label>
                   </li>
+                  <li>
+                    <input
+                      type="radio"
+                      className={styles.settingsColorRadio}
+                      name="menu"
+                      id="settings-color-radio"
+                      onClick={onColorRadioClick}
+                    />
+                    <label htmlFor="settings-color-radio">Color</label>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -69,6 +80,7 @@ const Popup: React.FC = () => {
             <div className={styles.settingsRight}>
               <BGContent style={{ display: contentDisplay[0] }} />
               <LinkContent style={{ display: contentDisplay[1] }} />
+              <ColorContent style={{ display: contentDisplay[2] }} />
             </div>
           </div>
 

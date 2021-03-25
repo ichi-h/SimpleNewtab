@@ -54,7 +54,8 @@
       }
 
       .settingsBGRadio,
-      .settingsLinkRadio {
+      .settingsLinkRadio,
+      .settingsColorRadio {
         display: none;
       }
     

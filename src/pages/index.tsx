@@ -8,11 +8,15 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
   const bg = useAppSelector(state => state.bg)
+  const bgColor = useAppSelector(state => state.bgColor)
 
   return (
     <div
       className={styles.newtab}
-      style={{ backgroundImage: bg }}
+      style={{
+        backgroundImage: bg,
+        backgroundColor: bgColor
+      }}
     >
 
       <Popup />
