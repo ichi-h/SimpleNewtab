@@ -11,12 +11,23 @@
   gap: 1rem;
 }
 
-  .bgThumbnail {
+  .bgThumbnail, .bgGray {
     width: 12vw;
+    height: 8vw;
+    border-radius: 3%;
+
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
     -webkit-user-drag: none;
+  }
+
+  .bgGray {
+    border: 1px solid gray;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
 /* LinkContent  */

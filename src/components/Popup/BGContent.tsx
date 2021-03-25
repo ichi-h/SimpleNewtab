@@ -26,6 +26,15 @@ const BGContent: React.FC<ContentStyle> = (props) => {
             />
           )})
         }
+        <div
+          className={styles.bgGray}
+          onClick={() => dispatch(setBG(''))}
+        >
+          <p>No Image</p>
+        </div>
+        <div className={styles.bgGray}>
+          <p>Upload</p>
+        </div>
       </div>
     </div>
   )
