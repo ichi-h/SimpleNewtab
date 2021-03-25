@@ -22,7 +22,7 @@ const Shortcuts: React.FC = () => {
     >
       {
         shortcuts.map((item, i) => {
-          if (shortcutsVisible === 'collapse') return
+          if (shortcutsVisible === 'hidden') return
 
           return (
             <div className={styles.shortcutItem} key={i}>

@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export type Display = 'none' | 'initial'
-export type Visibility = 'collapse' | 'visible'
+export type Visibility = 'hidden' | 'visible'
 
 interface ShortcutItems {
   name: string,
@@ -83,9 +83,9 @@ export const newtabSlice = createSlice({
     toggleSCDisplay: state => {
       switch (state.shortcutsVisible) {
         case 'visible':
-          state.shortcutsVisible = 'collapse'
+          state.shortcutsVisible = 'hidden'
           break
-        case 'collapse':
+        case 'hidden':
           state.shortcutsVisible = 'visible'
           break
       }
