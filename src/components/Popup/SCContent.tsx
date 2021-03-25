@@ -1,17 +1,47 @@
-import { useAppDispatch } from '../../lib/hooks'
+import { useAppDispatch, useAppSelector } from '../../lib/hooks'
 import { ContentStyle } from '../Popup'
+import { toggleSCDisplay } from '../../lib/newtabSlice'
 
-import styles from '../../styles/Popup.module.css'
+import styles from '../../styles/PopupContent.module.css'
 
-const LinkContent: React.FC<ContentStyle> = (props) => {
+const SCContent: React.FC<ContentStyle> = (props) => {
+  const shortcutsVisible = useAppSelector(state => state.shortcutsVisible)
+  let checked: boolean
+
+  if (shortcutsVisible === 'visible') {
+    checked = true
+  }
+  else {
+    checked = false
+  }
+
+  const dispatch = useAppDispatch()
+  const toggleCheck = () => {
+    dispatch(toggleSCDisplay())
+  }
+
   return (
     <div
-      className={styles.settingsLinkContent}
+      className={styles.settingsSCContent}
       style={props.style}
     >
-      <p>link</p>
+      <div className={styles.SCOption}>
+        <div className={styles.SCOptionLeft}>
+          <p>Show shortcuts</p>
+        </div>
+        <div className={styles.SCOptionRight}>
+          <input
+            className={styles.SCCheck}
+            id=""
+            type="checkbox"
+            name=""
+            defaultChecked={checked}
+            onChange={toggleCheck}
+          />
+        </div>
+      </div>
     </div>
   )
 }
 
-export default LinkContent
+export default SCContent

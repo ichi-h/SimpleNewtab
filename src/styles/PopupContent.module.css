@@ -62,4 +62,33 @@
     font-size: 1.7rem;
   }
 
+
+
 /* LinkContent  */
+.settingsSCContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+  .SCOption {
+    position: relative;
+    width: 20vw;
+    height: 3rem;
+    font-size: 3rem;
+  }
+
+    .SCOptionLeft {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    .SCOptionRight {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }

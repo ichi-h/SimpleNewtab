@@ -4,20 +4,33 @@ import { setShortcutItem } from '../lib/newtabSlice'
 import styles from '../styles/Shortcuts.module.css'
 
 const Shortcuts: React.FC = () => {
-  const dispatch = useAppDispatch()
-
   const shortcuts = useAppSelector(state => state.shortcuts)
+  const shortcutsVisible = useAppSelector(state => state.shortcutsVisible)
+
+  let height: string
+  if (shortcutsVisible === 'collapse') {
+    height = '0'
+  }
+  else {
+    height = 'auto'
+  }
+
+  const dispatch = useAppDispatch()
 
   const removeShortcut = (index: number ) => {
     let shortcuts_ = shortcuts.filter((_, i) => i !== index)
-
-    console.log(shortcuts_)
-
     dispatch(setShortcutItem(shortcuts_))
   }
 
   return (
-    <div className={styles.shortcuts} id="link-items">
+    <div
+      className={styles.shortcuts}
+      id="link-items"
+      style={{
+        visibility: shortcutsVisible,
+        height: height
+      }}
+    >
       {
         shortcuts.map((item, i) => { return (
           <div className={styles.shortcutItem} key={i}>
