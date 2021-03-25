@@ -77,7 +77,7 @@ export const newtabSlice = createSlice({
       state.shortcuts = action.payload
     },
 
-    togglePopup: state => {
+    togglePopupDisplay: state => {
       switch (state.popupDisplay) {
         case 'none':
           state.popupDisplay = 'initial'

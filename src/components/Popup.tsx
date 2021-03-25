@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../lib/hooks'
-import { Display, togglePopup } from '../lib/newtabSlice'
+import { Display, togglePopupDisplay } from '../lib/newtabSlice'
 
 import BGContent from './Popup/BGContent'
-import LinkContent from './Popup/LinkContent'
+import SCContent from './Popup/SCContent'
 
 import styles from '../styles/Popup.module.css'
 
@@ -20,10 +20,10 @@ const Popup: React.FC = () => {
   )
 
   const onBGRadioClick = () => setContentDisplay(['initial', 'none'])
-  const onLinkRadioClick = () => setContentDisplay(['none', 'initial'])
+  const onSCRadioClick = () => setContentDisplay(['none', 'initial'])
 
   const dispatch = useAppDispatch()
-  const onCloseButtonClick = () => dispatch(togglePopup())
+  const onCloseButtonClick = () => dispatch(togglePopupDisplay())
 
   return (
     <div
@@ -54,12 +54,12 @@ const Popup: React.FC = () => {
                   <li>
                     <input
                       type="radio"
-                      className={styles.settingsLinkRadio}
+                      className={styles.settingsSCRadio}
                       name="menu"
-                      id="settings-link-radio"
-                      onClick={onLinkRadioClick}
+                      id="settings-sc-radio"
+                      onClick={onSCRadioClick}
                     />
-                    <label htmlFor="settings-link-radio">Links</label>
+                    <label htmlFor="settings-sc-radio">SCs</label>
                   </li>
                 </ul>
               </div>
@@ -67,7 +67,7 @@ const Popup: React.FC = () => {
 
             <div className={styles.settingsRight}>
               <BGContent style={{ display: contentDisplay[0] }} />
-              <LinkContent style={{ display: contentDisplay[1] }} />
+              <SCContent style={{ display: contentDisplay[1] }} />
             </div>
           </div>
 
