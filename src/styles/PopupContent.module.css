@@ -11,7 +11,7 @@
   gap: 1rem;
 }
 
-  .bgThumbnail, .bgGray {
+  .bgThumbnail, .noImageButton, .bgUpload {
     width: 12vw;
     height: 8vw;
     border-radius: 3%;
@@ -22,12 +22,21 @@
     -webkit-user-drag: none;
   }
 
-  .bgGray {
+  .noImageButton, .bgUpload {
     border: 1px solid gray;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    font-size: 2rem;
   }
+
+  .bgUploadButton {
+    width: 12vw;
+    height: 8vw;
+    display: none;
+  }
+
 
 /* LinkContent  */

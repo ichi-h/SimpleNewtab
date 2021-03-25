@@ -9,6 +9,24 @@ const BGContent: React.FC<ContentStyle> = (props) => {
 
   const sampleImages = new Array(4).fill('').map((_, i) => `./assets/img/demo${i+1}.jpg`)
 
+  const sampleImageCallback = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
+    dispatch(setBG(e.currentTarget.src))
+  }
+
+  const noImageCallback = () => dispatch(setBG(''))
+
+  const uploadedCallback = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const uploadedBG = e.target.files[0]
+
+    let BGReader = new FileReader()
+
+    BGReader.onload = (e) => {
+      dispatch(setBG(e.target.result as string))
+    }
+
+    BGReader.readAsDataURL(uploadedBG)
+  }
+
   return (
     <div 
       className={styles.settingsBGContent}
@@ -22,19 +40,27 @@ const BGContent: React.FC<ContentStyle> = (props) => {
               onContextMenu={(e)=> e.preventDefault()}
               src={url}
               alt={`image${i+1}`}
-              onClick={(url) => dispatch(setBG(url.currentTarget.src))}
+              key={`image${i+1}`}
+              onClick={sampleImageCallback}
             />
           )})
         }
         <div
-          className={styles.bgGray}
-          onClick={() => dispatch(setBG(''))}
+          className={styles.noImageButton}
+          onClick={noImageCallback}
         >
           <p>No Image</p>
         </div>
-        <div className={styles.bgGray}>
+        <label htmlFor="bg-upload-button" className={styles.bgUpload}>
+          <input
+            className={styles.bgUploadButton}
+            id="bg-upload-button"
+            type="file"
+            accept=".jpg,.jpeg,.png"
+            onChange={uploadedCallback}
+          />
           <p>Upload</p>
-        </div>
+        </label>
       </div>
     </div>
   )
