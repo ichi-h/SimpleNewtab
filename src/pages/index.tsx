@@ -1,5 +1,5 @@
 import SearchBox from '../components/SearchBox'
-import LinkItems from '../components/LinkItems'
+import Shortcuts from '../components/Shortcuts'
 import SettingsButton from '../components/SettingsButton'
 import Popup from '../components/Popup'
 import { useAppSelector } from '../lib/hooks'
@@ -23,7 +23,7 @@ export default function Home() {
 
       <div className={styles.content}>
         <SearchBox />
-        <LinkItems />
+        <Shortcuts />
       </div>
 
       <SettingsButton />

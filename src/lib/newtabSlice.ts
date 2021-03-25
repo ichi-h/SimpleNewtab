@@ -10,7 +10,7 @@ interface Items {
 interface NewtabState {
   bg: string,
   bgColor: string,
-  items: Items[],
+  shortcuts: Items[],
   popupDisplay: Display,
   popupIndex: number
 }
@@ -18,7 +18,7 @@ interface NewtabState {
 const initialState: NewtabState = {
   bg: 'url("../assets/img/demo1.jpg")',
   bgColor: '#ffffff',
-  items: [] as Items[],
+  shortcuts: [] as Items[],
   popupDisplay: 'none',
   popupIndex: -1
 }
