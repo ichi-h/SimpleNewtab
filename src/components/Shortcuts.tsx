@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '../lib/hooks'
-import { addShortcutItem } from '../lib/newtabSlice'
+import { setShortcutItem } from '../lib/newtabSlice'
 
 import styles from '../styles/Shortcuts.module.css'
 
@@ -7,6 +7,14 @@ const Shortcuts: React.FC = () => {
   const dispatch = useAppDispatch()
 
   const shortcuts = useAppSelector(state => state.shortcuts)
+
+  const removeShortcut = (index: number ) => {
+    let shortcuts_ = shortcuts.filter((_, i) => i !== index)
+
+    console.log(shortcuts_)
+
+    dispatch(setShortcutItem(shortcuts_))
+  }
 
   return (
     <div className={styles.shortcuts} id="link-items">
@@ -29,12 +37,13 @@ const Shortcuts: React.FC = () => {
             </a>
             <label
               className={styles.removeShortcut}
-              htmlFor="remove-shortcut"
+              htmlFor={'remove-shortcut-' + i}
             >
               <input
                 className={styles.removeShortcutButton}
-                id="remove-shortcut"
+                id={'remove-shortcut-' + i}
                 type="button"
+                onClick={() => removeShortcut(i)}
               />
               <div className={styles.removeIcon}>
                 <i className="icon-cancel" />

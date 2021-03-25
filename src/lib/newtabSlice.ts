@@ -73,7 +73,9 @@ export const newtabSlice = createSlice({
       state.bgColor = action.payload
     },
 
-    addShortcutItem: state => {},
+    setShortcutItem: (state, action: PayloadAction<ShortcutItems[]>) => {
+      state.shortcuts = action.payload
+    },
 
     togglePopup: state => {
       switch (state.popupDisplay) {
@@ -91,4 +93,4 @@ export const newtabSlice = createSlice({
   }
 })
 
-export const { setBG, setBGColor, addShortcutItem, togglePopup } = newtabSlice.actions
+export const { setBG, setBGColor, setShortcutItem, togglePopup } = newtabSlice.actions
