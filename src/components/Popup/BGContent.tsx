@@ -7,7 +7,7 @@ import styles from '../../styles/PopupContent.module.css'
 const BGContent: React.FC<ContentStyle> = (props) => {
   const dispatch = useAppDispatch()
 
-  const sampleImages = new Array(5).fill('').map((_, i) => `./assets/img/demo${i+1}.jpg`)
+  const sampleImages = new Array(4).fill('').map((_, i) => `./assets/img/demo${i+1}.jpg`)
 
   return (
     <div 
