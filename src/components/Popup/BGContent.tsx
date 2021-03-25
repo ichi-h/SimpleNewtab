@@ -33,6 +33,25 @@ const BGContent: React.FC<ContentStyle> = (props) => {
       style={props.style}
     >
       <div className={styles.imageGrid}>
+
+        <label htmlFor="bg-upload-button" className={styles.bgUpload}>
+          <input
+            className={styles.bgUploadButton}
+            id="bg-upload-button"
+            type="file"
+            accept=".jpg,.jpeg,.png"
+            onChange={onFileUpload}
+          />
+          <p>Upload</p>
+        </label>
+
+        <div
+          className={styles.noImageButton}
+          onClick={onNoImgClick}
+        >
+          <p>No Image</p>
+        </div>
+
         {
           sampleImages.map((url, i) => { return (
             <img
@@ -45,22 +64,7 @@ const BGContent: React.FC<ContentStyle> = (props) => {
             />
           )})
         }
-        <div
-          className={styles.noImageButton}
-          onClick={onNoImgClick}
-        >
-          <p>No Image</p>
-        </div>
-        <label htmlFor="bg-upload-button" className={styles.bgUpload}>
-          <input
-            className={styles.bgUploadButton}
-            id="bg-upload-button"
-            type="file"
-            accept=".jpg,.jpeg,.png"
-            onChange={onFileUpload}
-          />
-          <p>Upload</p>
-        </label>
+
       </div>
     </div>
   )
