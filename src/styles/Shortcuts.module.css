@@ -1,0 +1,39 @@
+.shortcuts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  width: 66%;
+}
+
+  .shortcutItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 1rem 2rem;
+
+    cursor: pointer;
+  }
+
+    .shortcutCircle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 4vw;
+      height: 4vw;
+      border-radius: 50%;
+      background-color: #ffffff;
+    }
+
+    .shortcutIcon {
+      width: 2vw;
+    }
+
+    .shortcutText {
+      margin-top: 0.5rem;
+      font-size: 2rem;
+    }

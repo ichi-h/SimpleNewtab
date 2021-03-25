@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export type Display = 'none' | 'initial'
 
-interface Items {
+interface ShortcutItems {
   name: string,
   link: string
 }
@@ -10,15 +10,50 @@ interface Items {
 interface NewtabState {
   bg: string,
   bgColor: string,
-  shortcuts: Items[],
+  shortcuts: ShortcutItems[],
   popupDisplay: Display,
   popupIndex: number
 }
 
+const shortcuts: ShortcutItems[] = [
+  {
+    name: 'YouTue',
+    link: 'https://www.youtube.com/'
+  },
+  {
+    name: 'YouTue',
+    link: 'https://www.youtube.com/'
+  },
+  {
+    name: 'YouTue',
+    link: 'https://www.youtube.com/'
+  },
+  {
+    name: 'YouTue',
+    link: 'https://www.youtube.com/'
+  },
+  {
+    name: 'YouTue',
+    link: 'https://www.youtube.com/'
+  },
+  {
+    name: 'YouTue',
+    link: 'https://www.youtube.com/'
+  },
+  {
+    name: 'YouTue',
+    link: 'https://www.youtube.com/'
+  },
+  {
+    name: 'YouTue',
+    link: 'https://www.youtube.com/'
+  },
+]
+
 const initialState: NewtabState = {
   bg: 'url("../assets/img/demo1.jpg")',
   bgColor: '#ffffff',
-  shortcuts: [] as Items[],
+  shortcuts: shortcuts,
   popupDisplay: 'none',
   popupIndex: -1
 }
@@ -38,7 +73,7 @@ export const newtabSlice = createSlice({
       state.bgColor = action.payload
     },
 
-    addItem: state => {},
+    addShortcutItem: state => {},
 
     togglePopup: state => {
       switch (state.popupDisplay) {
@@ -56,4 +91,4 @@ export const newtabSlice = createSlice({
   }
 })
 
-export const { setBG, setBGColor, addItem, togglePopup } = newtabSlice.actions
+export const { setBG, setBGColor, addShortcutItem, togglePopup } = newtabSlice.actions
