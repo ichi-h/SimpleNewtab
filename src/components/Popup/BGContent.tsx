@@ -9,13 +9,13 @@ const BGContent: React.FC<ContentStyle> = (props) => {
 
   const sampleImages = new Array(4).fill('').map((_, i) => `./assets/img/demo${i+1}.jpg`)
 
-  const sampleImageCallback = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
+  const onSampleImgClick = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
     dispatch(setBG(e.currentTarget.src))
   }
 
-  const noImageCallback = () => dispatch(setBG(''))
+  const onNoImgClick = () => dispatch(setBG(''))
 
-  const uploadedCallback = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const uploadedBG = e.target.files[0]
 
     let BGReader = new FileReader()
@@ -41,13 +41,13 @@ const BGContent: React.FC<ContentStyle> = (props) => {
               src={url}
               alt={`image${i+1}`}
               key={`image${i+1}`}
-              onClick={sampleImageCallback}
+              onClick={onSampleImgClick}
             />
           )})
         }
         <div
           className={styles.noImageButton}
-          onClick={noImageCallback}
+          onClick={onNoImgClick}
         >
           <p>No Image</p>
         </div>
@@ -57,7 +57,7 @@ const BGContent: React.FC<ContentStyle> = (props) => {
             id="bg-upload-button"
             type="file"
             accept=".jpg,.jpeg,.png"
-            onChange={uploadedCallback}
+            onChange={onFileUpload}
           />
           <p>Upload</p>
         </label>

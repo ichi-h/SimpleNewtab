@@ -19,12 +19,12 @@ const Popup: React.FC = () => {
     ['initial', 'none'] as Display[]
   )
 
-  const bgRadioCallback = () => setContentDisplay(['initial', 'none'])
+  const onBGRadioClick = () => setContentDisplay(['initial', 'none'])
 
-  const linkRadioCallback = () => setContentDisplay(['none', 'initial'])
+  const onLinkRadioClick = () => setContentDisplay(['none', 'initial'])
 
   const dispatch = useAppDispatch()
-  const closeButtonCallback = () => dispatch(togglePopup())
+  const onCloseButtonClick = () => dispatch(togglePopup())
 
   return (
     <div
@@ -48,7 +48,7 @@ const Popup: React.FC = () => {
                       name="menu"
                       id="settings-bg-radio"
                       defaultChecked={true}
-                      onClick={bgRadioCallback}
+                      onClick={onBGRadioClick}
                     />
                     <label htmlFor="settings-bg-radio">Background</label>
                   </li>
@@ -58,7 +58,7 @@ const Popup: React.FC = () => {
                       className={styles.settingsLinkRadio}
                       name="menu"
                       id="settings-link-radio"
-                      onClick={linkRadioCallback}
+                      onClick={onLinkRadioClick}
                     />
                     <label htmlFor="settings-link-radio">Links</label>
                   </li>
@@ -77,12 +77,12 @@ const Popup: React.FC = () => {
               <input
                 type="button"
                 value="close"
-                onClick={closeButtonCallback}
+                onClick={onCloseButtonClick}
               />
               <input
                 type="button"
                 value="OK"
-                onClick={closeButtonCallback}
+                onClick={onCloseButtonClick}
               />
             </div>
           </div>

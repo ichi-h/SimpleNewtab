@@ -5,14 +5,14 @@ import styles from '../styles/Home.module.css'
 
 const SettingsButton: React.FC = () => {
   const dispatch = useAppDispatch()
-  const buttonCallback = () => dispatch(togglePopup())
+  const showPopup = () => dispatch(togglePopup())
 
   return (
     <div className={styles.settingsButton}>
       <input
         type="button"
         value="settings"
-        onClick={buttonCallback}
+        onClick={showPopup}
       />
     </div>
   )
