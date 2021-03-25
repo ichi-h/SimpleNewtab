@@ -2,7 +2,14 @@ import { useState } from 'react'
 import { useAppDispatch } from '../lib/hooks'
 import { Display, togglePopup } from '../lib/newtabSlice'
 
+import BGContent from './Popup/BGContent'
+import LinkContent from './Popup/LinkContent'
+
 import styles from '../styles/Popup.module.css'
+
+export interface ContentStyle {
+  style: { display: Display }
+}
 
 interface PopupProps {
   popupDisplay: Display,
@@ -70,18 +77,8 @@ const Popup: React.FC<PopupProps> = (props) => {
             </div>
 
             <div className={styles.settingsRight}>
-              <div
-                className={styles.settingsBGContent}
-                style={{ display: contentDisplay[0] }}
-              >
-                <p>bg</p>
-              </div>
-              <div
-                className={styles.settingsLinkContent}
-                style={{ display: contentDisplay[1] }}
-              >
-                <p>link</p>
-              </div>
+              <BGContent style={{ display: contentDisplay[0] }} />
+              <LinkContent style={{ display: contentDisplay[1] }} />
             </div>
           </div>
 
