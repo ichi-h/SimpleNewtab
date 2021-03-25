@@ -8,32 +8,85 @@
 }
 
   .shortcutItem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    margin: 1rem 2rem;
-
-    cursor: pointer;
+    position: relative;
+    width: calc(4vw + 3rem);
+    height: calc(4vw + 4rem + 2rem);
   }
 
-    .shortcutCircle {
+    .shortcutLink {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
 
-      width: 4vw;
-      height: 4vw;
-      border-radius: 50%;
-      background-color: #ffffff;
+      padding: 1rem;
+      cursor: pointer;
+      transition: .1s;
     }
 
-    .shortcutIcon {
-      width: 2vw;
+    .shortcutLink:hover {
+      background-color: #ffffff75;
     }
 
-    .shortcutText {
-      margin-top: 0.5rem;
-      font-size: 2rem;
+      .shortcutCircle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 4vw;
+        height: 4vw;
+        border-radius: 50%;
+        background-color: #ffffff;
+      }
+
+      .shortcutIcon {
+        width: 2vw;
+      }
+
+      .shortcutText {
+        margin-top: 0.5rem;
+        font-size: 2rem;
+      }
+
+    .removeShortcut {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+
+      z-index: 2;
+
+      opacity: 0;
+      visibility: hidden;
+      transition: .1s;
     }
+
+      .shortcutLink:hover ~ .removeShortcut {
+        animation: fadein-remove-button .1s ease forwards;
+        animation-delay: .5s;
+      }
+
+        @keyframes fadein-remove-button {
+          0% { visibility: visible; }
+          100% {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      
+      .removeShortcut:hover {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .removeShortcutButton {
+        display: none;
+      }
+
+      .removeIcon:hover {
+        cursor: pointer;
+      }
