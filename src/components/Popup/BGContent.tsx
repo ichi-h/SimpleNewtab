@@ -1,13 +1,11 @@
-import { useAppDispatch } from '../../lib/hooks'
-import { setBG } from '../../lib/newtabSlice'
+import { useAppDispatch, useAppSelector } from '../../lib/hooks'
+import { setBG, setBGColor } from '../../lib/newtabSlice'
 import { ContentStyle } from '../Popup'
 
 import styles from '../../styles/PopupContent.module.css'
 
 const BGContent: React.FC<ContentStyle> = (props) => {
   const dispatch = useAppDispatch()
-
-  const sampleImages = new Array(4).fill('').map((_, i) => `./assets/img/demo${i+1}.jpg`)
 
   const onSampleImgClick = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
     dispatch(setBG(e.currentTarget.src))
@@ -40,6 +38,13 @@ const BGContent: React.FC<ContentStyle> = (props) => {
       alert(error)
     }
   }
+
+  const bgColor = useAppSelector(state => state.bgColor)
+  const changeBGColor = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setBGColor(e.target.value))
+  }
+
+  const sampleImages = new Array(4).fill('').map((_, i) => `./assets/img/demo${i+1}.jpg`)
 
   return (
     <div 
@@ -79,6 +84,18 @@ const BGContent: React.FC<ContentStyle> = (props) => {
           )})
         }
 
+      </div>
+
+      <div className={styles.bgColor}>
+        <p className={styles.bgColorText}>Background color:</p>
+        <input
+          className={styles.bgColorPicker}
+          id="bg-color"
+          type="color"
+          name="bg-color"
+          defaultValue={bgColor}
+          onChange={changeBGColor}
+        />
       </div>
     </div>
   )

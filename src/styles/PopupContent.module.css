@@ -1,6 +1,9 @@
 .settingsBGContent,
 .settingsLinkContent {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 /* BGContent */
@@ -12,8 +15,8 @@
 }
 
   .bgThumbnail, .noImageButton, .bgUpload {
-    width: 12vw;
-    height: 8vw;
+    width: 9vw;
+    height: 6vw;
     border-radius: 3%;
 
     cursor: pointer;
@@ -38,5 +41,25 @@
     display: none;
   }
 
+.bgColor {
+  position: relative;
+  padding-top: 4rem;
+}
+
+  .bgColorText {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    font-size: 2rem;
+  }
+
+  .bgColorPicker {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    font-size: 1.7rem;
+  }
 
 /* LinkContent  */
