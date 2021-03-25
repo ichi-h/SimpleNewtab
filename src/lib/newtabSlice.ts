@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export type Display = 'none' | 'initial'
 
@@ -15,7 +15,7 @@ interface NewtabState {
 }
 
 const initialState: NewtabState = {
-  bg: '',
+  bg: 'url("../assets/img/demo1.jpg")',
   items: [] as Items[],
   popupDisplay: 'none',
   popupIndex: -1
@@ -27,7 +27,11 @@ export const newtabSlice = createSlice({
   initialState,
 
   reducers: {
-    search: state => {},
+    setBG: (state, action: PayloadAction<string>) => {
+      const url = `url("${action.payload}")`
+      state.bg = url
+    },
+
     addItem: state => {},
 
     togglePopup: state => {
@@ -46,4 +50,4 @@ export const newtabSlice = createSlice({
   }
 })
 
-export const { search, addItem, togglePopup } = newtabSlice.actions
+export const { setBG, addItem, togglePopup } = newtabSlice.actions

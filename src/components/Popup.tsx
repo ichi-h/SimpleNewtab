@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useAppDispatch } from '../lib/hooks'
+import { useAppDispatch, useAppSelector } from '../lib/hooks'
 import { Display, togglePopup } from '../lib/newtabSlice'
 
 import BGContent from './Popup/BGContent'
@@ -11,37 +11,27 @@ export interface ContentStyle {
   style: { display: Display }
 }
 
-interface PopupProps {
-  popupDisplay: Display,
-  popupIndex: number
-}
+const Popup: React.FC = () => {
+  const popupDisplay = useAppSelector(state => state.popupDisplay)
+  const popupIndex = useAppSelector(state => state.popupIndex)
 
-const Popup: React.FC<PopupProps> = (props) => {
   const [contentDisplay, setContentDisplay] = useState(
     ['initial', 'none'] as Display[]
   )
 
-  const bgRadioCallback = () => {
-    console.log(contentDisplay)
-    setContentDisplay(['initial', 'none'])
-  }
+  const bgRadioCallback = () => setContentDisplay(['initial', 'none'])
 
-  const linkRadioCallback = () => {
-    console.log(contentDisplay)
-    setContentDisplay(['none', 'initial'])
-  }
+  const linkRadioCallback = () => setContentDisplay(['none', 'initial'])
 
   const dispatch = useAppDispatch()
-  const closeButtonCallback = () => {
-    dispatch(togglePopup())
-  }
+  const closeButtonCallback = () => dispatch(togglePopup())
 
   return (
     <div
       className={styles.popup}
       style={{
-        display: props.popupDisplay,
-        zIndex: props.popupIndex
+        display: popupDisplay,
+        zIndex: popupIndex
       }}
     >
       <div className={styles.outerSettings}>

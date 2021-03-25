@@ -1,29 +1,28 @@
-import { Provider } from 'react-redux'
-
 import SearchBox from '../components/SearchBox'
 import LinkItems from '../components/LinkItems'
 import SettingsButton from '../components/SettingsButton'
 import Popup from '../components/Popup'
 import { useAppSelector } from '../lib/hooks'
-import { store } from '../lib/store'
 
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const popupDisplay = useAppSelector(state => state.popupDisplay)
-  const popupIndex = useAppSelector(state => state.popupIndex)
+  const bg = useAppSelector(state => state.bg)
 
   return (
-    <div className={styles.newtab}>
+    <div
+      className={styles.newtab}
+      style={{ backgroundImage: bg }}
+    >
 
-    <Popup popupDisplay={popupDisplay} popupIndex={popupIndex} />
+      <Popup />
 
-    <div className={styles.content}>
-      <SearchBox />
-      <LinkItems />
-    </div>
+      <div className={styles.content}>
+        <SearchBox />
+        <LinkItems />
+      </div>
 
-    <SettingsButton />
+      <SettingsButton />
 
     </div>
   )
