@@ -7,14 +7,6 @@ const Shortcuts: React.FC = () => {
   const shortcuts = useAppSelector(state => state.shortcuts)
   const shortcutsVisible = useAppSelector(state => state.shortcutsVisible)
 
-  let height: string
-  if (shortcutsVisible === 'collapse') {
-    height = '0'
-  }
-  else {
-    height = 'auto'
-  }
-
   const dispatch = useAppDispatch()
 
   const removeShortcut = (index: number ) => {
@@ -26,43 +18,43 @@ const Shortcuts: React.FC = () => {
     <div
       className={styles.shortcuts}
       id="link-items"
-      style={{
-        visibility: shortcutsVisible,
-        height: height
-      }}
+      style={{ visibility: shortcutsVisible }}
     >
       {
-        shortcuts.map((item, i) => { return (
-          <div className={styles.shortcutItem} key={i}>
-            <a
-              className={styles.shortcutLink}
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className={styles.shortcutCircle}>
-                <img
-                  className={styles.shortcutIcon}
-                  src={`https://www.google.com/s2/favicons?domain=${item.link}`}
+        shortcuts.map((item, i) => {
+          if (shortcutsVisible === 'collapse') return
+
+          return (
+            <div className={styles.shortcutItem} key={i}>
+              <a
+                className={styles.shortcutLink}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className={styles.shortcutCircle}>
+                  <img
+                    className={styles.shortcutIcon}
+                    src={`https://www.google.com/s2/favicons?domain=${item.link}`}
+                  />
+                </div>
+                <p className={styles.shortcutText}>{ item.name }</p>
+              </a>
+              <label
+                className={styles.removeShortcut}
+                htmlFor={'remove-shortcut-' + i}
+              >
+                <input
+                  className={styles.removeShortcutButton}
+                  id={'remove-shortcut-' + i}
+                  type="button"
+                  onClick={() => removeShortcut(i)}
                 />
-              </div>
-              <p className={styles.shortcutText}>{ item.name }</p>
-            </a>
-            <label
-              className={styles.removeShortcut}
-              htmlFor={'remove-shortcut-' + i}
-            >
-              <input
-                className={styles.removeShortcutButton}
-                id={'remove-shortcut-' + i}
-                type="button"
-                onClick={() => removeShortcut(i)}
-              />
-              <div className={styles.removeIcon}>
-                <i className="icon-cancel" />
-              </div>
-            </label>
-          </div>
+                <div className={styles.removeIcon}>
+                  <i className="icon-cancel" />
+                </div>
+              </label>
+            </div>
         )})
       }
     </div>
