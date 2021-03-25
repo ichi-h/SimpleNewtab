@@ -18,13 +18,27 @@ const BGContent: React.FC<ContentStyle> = (props) => {
   const onFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const uploadedBG = e.target.files[0]
 
+    if (uploadedBG === undefined) return
+    // When the input value changed something to "undefined",
+    // the type error occurs on readAsDataURL.
+
+    if (uploadedBG.type.indexOf('image/')) {
+      alert(`Error: Could not read "${uploadedBG.name}"`)
+      return
+    }
+
     let BGReader = new FileReader()
 
     BGReader.onload = (e) => {
       dispatch(setBG(e.target.result as string))
     }
 
-    BGReader.readAsDataURL(uploadedBG)
+    try {
+      BGReader.readAsDataURL(uploadedBG)
+    }
+    catch (error) {
+      alert(error)
+    }
   }
 
   return (
@@ -39,7 +53,7 @@ const BGContent: React.FC<ContentStyle> = (props) => {
             className={styles.bgUploadButton}
             id="bg-upload-button"
             type="file"
-            accept=".jpg,.jpeg,.png"
+            accept="image/*"
             onChange={onFileUpload}
           />
           <p>Upload</p>
