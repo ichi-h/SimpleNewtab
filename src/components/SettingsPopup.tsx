@@ -16,6 +16,8 @@ const SettingsPopup: React.FC = () => {
 
   return (
     <div className={styles.settingsPopup}>
+      <h1 className={styles.popupH1}>Settings</h1>
+
       <div className={styles.settingsTop}>
         <BGContent />
         <SCContent />

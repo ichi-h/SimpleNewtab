@@ -13,24 +13,23 @@ const SCContent: React.FC = () => {
   return (
     <div className={styles.settingsSCContent}>
       <h2 className={styles.SCh2}>Shortcuts</h2>
-      <ul className={styles.SCOptions}>
-        <li>
-          <input
-            className={styles.SCCheck}
-            id="sc-check"
-            type="checkbox"
-            name=""
-            defaultChecked={shortcutsIsShow}
-            onChange={toggleCheck}
-            />
-          <label
-            className={styles.SCCheckLabel}
-            htmlFor="sc-check"
-          >
-            Show shortcuts
-          </label>
-        </li>
-      </ul>
+      <div className="show-shortcuts">
+        <input
+          className={styles.SCCheck}
+          id="sc-check"
+          type="checkbox"
+          defaultChecked={shortcutsIsShow}
+          onChange={toggleCheck}
+        />
+        <label
+          className={styles.SCCheckLabel}
+          htmlFor="sc-check"
+        >
+          Show shortcuts
+        </label>
+      </div>
+
+      <h3 className={styles.SCh3}>Text color</h3>
     </div>
   )
 }

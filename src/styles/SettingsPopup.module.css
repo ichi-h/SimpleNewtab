@@ -4,6 +4,11 @@
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
   width: 40%;
   height: 60%;
 
@@ -14,15 +19,19 @@
   z-index: 200;
 }
 
-  .settingsTop {
-    width: 100%;
-    height: 90%;
+  .popupH1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
 
+  .settingsTop {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    flex-wrap: wrap;
+
+    width: 100%;
+    overflow-y: scroll;
   }
 
   .settingsBottom {
