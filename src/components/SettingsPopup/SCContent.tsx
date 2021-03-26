@@ -30,6 +30,10 @@ const SCContent: React.FC = () => {
       </div>
 
       <h3 className={styles.SCh3}>Text color</h3>
+      <select className={styles.SCSelector} defaultValue="black">
+        <option value="black">Black</option>
+        <option value="white">White</option>
+      </select>
     </div>
   )
 }
