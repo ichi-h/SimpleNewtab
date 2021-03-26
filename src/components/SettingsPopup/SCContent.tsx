@@ -1,12 +1,8 @@
 import { useAppDispatch, useAppSelector } from '../../lib/hooks'
 import { toggleShortcuts } from '../../lib/newtabSlice'
-import { ContentProps } from '../SettingsPopup'
-
 import styles from '../../styles/PopupContent.module.css'
 
-const SCContent: React.FC<ContentProps> = (props) => {
-  if (!props.bool) return <></>
-
+const SCContent: React.FC = () => {
   const shortcutsIsShow = useAppSelector(state => state.shortcutsIsShow)
 
   const dispatch = useAppDispatch()
@@ -16,21 +12,20 @@ const SCContent: React.FC<ContentProps> = (props) => {
 
   return (
     <div className={styles.settingsSCContent}>
-      <div className={styles.SCOption}>
-        <div className={styles.SCOptionLeft}>
-          <p>Show shortcuts</p>
-        </div>
-        <div className={styles.SCOptionRight}>
+      <h2>Shortcuts</h2>
+      <ul className={styles.SCOptions}>
+        <li>
           <input
             className={styles.SCCheck}
-            id=""
+            id="sc-check"
             type="checkbox"
             name=""
             defaultChecked={shortcutsIsShow}
             onChange={toggleCheck}
-          />
-        </div>
-      </div>
+            />
+          <label htmlFor="sc-check">Show shortcuts</label>
+        </li>
+      </ul>
     </div>
   )
 }

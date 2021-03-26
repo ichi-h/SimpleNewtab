@@ -1,17 +1,11 @@
-.settingsBGContent,
-.settingsLinkContent {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-}
-
 /* BGContent */
 .imageGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 1rem;
+
+  width: calc(9vw * 3 + 1rem * 2);
 }
 
   .bgThumbnail, .noImageButton, .bgUpload {
@@ -36,8 +30,8 @@
   }
 
   .bgUploadButton {
-    width: 12vw;
-    height: 8vw;
+    width: 9vw;
+    height: 6vw;
     display: none;
   }
 
@@ -66,29 +60,9 @@
 
 /* LinkContent  */
 .settingsSCContent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  width: calc(9vw * 3 + 1rem * 2);
 }
 
-  .SCOption {
-    position: relative;
-    width: 20vw;
-    height: 3rem;
-    font-size: 3rem;
+  .SCOptions {
+    list-style: none;
   }
-
-    .SCOptionLeft {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-    }
-
-    .SCOptionRight {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-    }
