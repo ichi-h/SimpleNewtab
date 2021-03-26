@@ -57,6 +57,19 @@ const Shortcuts: React.FC = () => {
             </div>
         )})
       }
+      <div className={styles.shortcutItem}>
+        <a
+          className={styles.shortcutLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => console.log('clicked')}
+        >
+          <div className={styles.shortcutCircle}>
+            <i className="icon-plus"></i>
+          </div>
+          <p className={styles.shortcutText}>Add</p>
+        </a>
+      </div>
     </div>
   )
 }
