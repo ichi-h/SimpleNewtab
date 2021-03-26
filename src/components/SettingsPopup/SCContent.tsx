@@ -12,7 +12,7 @@ const SCContent: React.FC = () => {
 
   return (
     <div className={styles.settingsSCContent}>
-      <h2>Shortcuts</h2>
+      <h2 className={styles.SCh2}>Shortcuts</h2>
       <ul className={styles.SCOptions}>
         <li>
           <input
@@ -23,7 +23,12 @@ const SCContent: React.FC = () => {
             defaultChecked={shortcutsIsShow}
             onChange={toggleCheck}
             />
-          <label htmlFor="sc-check">Show shortcuts</label>
+          <label
+            className={styles.SCCheckLabel}
+            htmlFor="sc-check"
+          >
+            Show shortcuts
+          </label>
         </li>
       </ul>
     </div>

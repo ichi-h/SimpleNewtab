@@ -47,7 +47,7 @@ const BGContent: React.FC = () => {
 
   return (
     <div className={styles.settingsBGContent}>
-      <h2>Background</h2>
+      <h2 className={styles.BGh2}>Background</h2>
       <div className={styles.imageGrid}>
 
         <label htmlFor="bg-upload-button" className={styles.bgUpload}>

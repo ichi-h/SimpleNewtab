@@ -1,4 +1,9 @@
 /* BGContent */
+.BGh2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
 .imageGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -59,10 +64,21 @@
 
 
 /* LinkContent  */
+.SCh2 {
+  font-size: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
 .settingsSCContent {
   width: calc(9vw * 3 + 1rem * 2);
 }
 
   .SCOptions {
     list-style: none;
+  }
+
+  .SCCheckLabel {
+    font-size: 2rem;
+    margin-left: 1rem;
   }
