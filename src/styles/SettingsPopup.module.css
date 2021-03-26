@@ -10,7 +10,7 @@
   flex-direction: column;
 
   width: 40%;
-  height: 60%;
+  height: 70%;
 
   background-color: white;
   border-radius: 1%;
@@ -21,17 +21,25 @@
 
   .popupH1 {
     font-size: 3.5rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
   }
 
   .settingsTop {
+    width: 100%;
+    height: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .settingsScrollbar {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
     width: 100%;
-    overflow-y: scroll;
+    margin-left: 0.5vw;
   }
 
   .settingsBottom {

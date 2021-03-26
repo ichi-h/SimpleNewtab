@@ -19,8 +19,10 @@ const SettingsPopup: React.FC = () => {
       <h1 className={styles.popupH1}>Settings</h1>
 
       <div className={styles.settingsTop}>
-        <BGContent />
-        <SCContent />
+        <div className={styles.settingsScrollbar}>
+          <BGContent />
+          <SCContent />
+        </div>
       </div>
 
       <div className={styles.settingsBottom}>
