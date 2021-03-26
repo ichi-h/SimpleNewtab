@@ -14,6 +14,8 @@ const Shortcuts: React.FC = () => {
     dispatch(setShortcutItem(shortcuts_))
   }
 
+  if (shortcutsVisible === 'hidden') return <div></div>
+
   return (
     <div
       className={styles.shortcuts}
@@ -22,8 +24,6 @@ const Shortcuts: React.FC = () => {
     >
       {
         shortcuts.map((item, i) => {
-          if (shortcutsVisible === 'hidden') return
-
           return (
             <div className={styles.shortcutItem} key={i}>
               <a
