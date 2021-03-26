@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from '../../lib/hooks'
 import { setBG, setBGColor } from '../../lib/newtabSlice'
-import { ContentStyle } from '../Popup'
+import { ContentStyle } from '../SettingsPopup'
 
 import styles from '../../styles/PopupContent.module.css'
 

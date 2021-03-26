@@ -1,7 +1,7 @@
 import SearchBox from '../components/SearchBox'
 import Shortcuts from '../components/Shortcuts'
 import SettingsButton from '../components/SettingsButton'
-import Popup from '../components/Popup'
+import SettingsPopup from '../components/SettingsPopup'
 import { useAppSelector } from '../lib/hooks'
 
 import styles from '../styles/Home.module.css'
@@ -19,7 +19,7 @@ export default function Home() {
       }}
     >
 
-      <Popup />
+      <SettingsPopup />
 
       <div className={styles.content}>
         <SearchBox />

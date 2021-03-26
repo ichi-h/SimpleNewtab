@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '../../lib/hooks'
-import { ContentStyle } from '../Popup'
+import { ContentStyle } from '../SettingsPopup'
 import { toggleSCDisplay } from '../../lib/newtabSlice'
 
 import styles from '../../styles/PopupContent.module.css'

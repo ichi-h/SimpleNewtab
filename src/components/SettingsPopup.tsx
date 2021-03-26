@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../lib/hooks'
 import { Display, togglePopupDisplay } from '../lib/newtabSlice'
 
-import BGContent from './Popup/BGContent'
-import SCContent from './Popup/SCContent'
+import BGContent from './SettingsPopup/BGContent'
+import SCContent from './SettingsPopup/SCContent'
 
-import styles from '../styles/Popup.module.css'
+import styles from '../styles/SettingsPopup.module.css'
 
 export interface ContentStyle {
   style: { display: Display }
@@ -27,7 +27,7 @@ const Popup: React.FC = () => {
 
   return (
     <div
-      className={styles.popup}
+      className={styles.settingsPopup}
       style={{
         display: popupDisplay,
         zIndex: popupIndex
