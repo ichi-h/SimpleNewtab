@@ -65,7 +65,13 @@
 /* SearchBox (SB) Content */
 .SBh2 {
   font-size: 3rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.SBh3 {
+  font-size: 2rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -82,7 +88,7 @@
 /* Shortcuts (SC) Content  */
 .SCh2 {
   font-size: 3rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   margin-bottom: 1rem;
 }
 

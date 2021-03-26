@@ -3,8 +3,21 @@ import { useAppSelector } from '../lib/hooks'
 import styles from '../styles/Home.module.css'
 
 const SearchBox: React.FC = () => {
-  const searchAction = useAppSelector(state => state.searchAction)
+  const searchEngine = useAppSelector(state => state.searchEngine)
   const searchBoxIsShow = useAppSelector(state => state.searchBoxIsShow)
+
+  let searchAction: string
+  switch (searchEngine) {
+    case 'Google':
+      searchAction = 'https://www.google.com/search'
+      break
+    case 'Bing':
+      searchAction = 'https://www.bing.com/search'
+      break
+    case 'DuckDuckGo':
+      searchAction = 'https://duckduckgo.com'
+      break
+  }
 
   if (!searchBoxIsShow) return <></>
 

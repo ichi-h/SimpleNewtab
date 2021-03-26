@@ -12,7 +12,7 @@ interface NewtabState {
   bg: string,
   bgColor: string,
   shortcuts: ShortcutItems[],
-  searchAction: string,
+  searchEngine: SearchEngine,
   textColor: TextColor,
   shortcutsIsShow: boolean,
   formIsShow: boolean,
@@ -59,7 +59,7 @@ const initialState: NewtabState = {
   bg: 'url("./assets/img/demo1.jpg")',
   bgColor: '#ffffff',
   shortcuts: shortcuts,
-  searchAction: 'https://www.google.com/search',
+  searchEngine: 'Google',
   textColor: 'black',
   shortcutsIsShow: true,
   formIsShow: false,
@@ -87,20 +87,7 @@ export const newtabSlice = createSlice({
     },
 
     setSearchEngine: (state, action: PayloadAction<SearchEngine>) => {
-      const searchAction = {
-        Google: 'https://www.google.com/search',
-        Bing: 'https://www.bing.com/search',
-        DuckDuckGo: 'https://duckduckgo.com'
-      }
-
-      switch (action.payload) {
-        case 'Google':
-          state.searchAction = searchAction['Google']
-        case 'Bing':
-          state.searchAction = searchAction['Bing']
-        case 'DuckDuckGo':
-          state.searchAction = searchAction['DuckDuckGo']
-      }
+      state.searchEngine = action.payload
     },
 
     setTextColor: (state, action: PayloadAction<TextColor>) => {
