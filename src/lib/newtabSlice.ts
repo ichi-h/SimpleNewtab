@@ -5,10 +5,13 @@ interface ShortcutItems {
   url: string
 }
 
+type SearchEngine = 'Google' | 'Bing' | 'DuckDuckGo'
+
 interface NewtabState {
   bg: string,
   bgColor: string,
   shortcuts: ShortcutItems[],
+  searchAction: string
   shortcutsIsShow: boolean,
   formIsShow: boolean,
   settingsPopupIsShow: boolean
@@ -53,6 +56,7 @@ const initialState: NewtabState = {
   bg: 'url("./assets/img/demo1.jpg")',
   bgColor: '#ffffff',
   shortcuts: shortcuts,
+  searchAction: 'https://www.google.com/search',
   shortcutsIsShow: true,
   formIsShow: false,
   settingsPopupIsShow: false
@@ -77,6 +81,23 @@ export const newtabSlice = createSlice({
       state.shortcuts = action.payload
     },
 
+    setSearchEngine: (state, action: PayloadAction<SearchEngine>) => {
+      const searchAction = {
+        Google: 'https://www.google.com/search',
+        Bing: 'https://www.bing.com/search',
+        DuckDuckGo: 'https://duckduckgo.com'
+      }
+
+      switch (action.payload) {
+        case 'Google':
+          state.searchAction = searchAction['Google']
+        case 'Bing':
+          state.searchAction = searchAction['Bing']
+        case 'DuckDuckGo':
+          state.searchAction = searchAction['DuckDuckGo']
+      }
+    },
+
     toggleShortcuts: state => {
       state.shortcutsIsShow = !state.shortcutsIsShow
     },
@@ -95,6 +116,7 @@ export const {
   setBG,
   setBGColor,
   setShortcutItem,
+  setSearchEngine,
   toggleShortcuts,
   toggleForm,
   togglePopup

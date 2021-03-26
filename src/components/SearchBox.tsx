@@ -1,11 +1,13 @@
-import { useState } from 'react'
+import { useAppSelector } from '../lib/hooks'
 
 import styles from '../styles/Home.module.css'
 
 const SearchBox: React.FC = () => {
+  const searchAction = useAppSelector(state => state.searchAction)
+
   return (
     <div className={styles.searchBox}>
-      <form action="https://duckduckgo.com/" method="get">
+      <form action={searchAction} method="get">
           <input type="hidden" name="hl" />
           <input type="textbox" name="q" />
           <input type="submit" name="btnG" value="Search" />
