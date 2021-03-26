@@ -4,6 +4,9 @@ import styles from '../styles/Home.module.css'
 
 const SearchBox: React.FC = () => {
   const searchAction = useAppSelector(state => state.searchAction)
+  const searchBoxIsShow = useAppSelector(state => state.searchBoxIsShow)
+
+  if (!searchBoxIsShow) return <></>
 
   return (
     <div className={styles.searchBox}>

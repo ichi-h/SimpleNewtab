@@ -1,4 +1,4 @@
-/* BGContent */
+/* Background (BG) Content */
 .BGh2 {
   font-size: 3rem;
   margin-bottom: 1rem;
@@ -62,8 +62,24 @@
   }
 
 
+/* SearchBox (SB) Content */
+.SBh2 {
+  font-size: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
 
-/* LinkContent  */
+.settingsSBContent {
+  width: calc(9vw * 3 + 1rem * 2);
+}
+
+  .SBCheckLabel {
+    font-size: 2rem;
+    margin-left: 1rem;
+  }
+
+
+/* Shortcuts (SC) Content  */
 .SCh2 {
   font-size: 3rem;
   margin-top: 2rem;
@@ -79,10 +95,6 @@
 .settingsSCContent {
   width: calc(9vw * 3 + 1rem * 2);
 }
-
-  .SCOptions {
-    list-style: none;
-  }
 
   .SCCheckLabel {
     font-size: 2rem;
