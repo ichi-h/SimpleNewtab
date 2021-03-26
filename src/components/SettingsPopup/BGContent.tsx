@@ -1,10 +1,12 @@
 import { useAppDispatch, useAppSelector } from '../../lib/hooks'
 import { setBG, setBGColor } from '../../lib/newtabSlice'
-import { ContentStyle } from '../SettingsPopup'
+import { ContentProps } from '../SettingsPopup'
 
 import styles from '../../styles/PopupContent.module.css'
 
-const BGContent: React.FC<ContentStyle> = (props) => {
+const BGContent: React.FC<ContentProps> = (props) => {
+  if (!props.bool) return <></>
+
   const dispatch = useAppDispatch()
 
   const onSampleImgClick = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
@@ -47,10 +49,7 @@ const BGContent: React.FC<ContentStyle> = (props) => {
   const sampleImages = new Array(4).fill('').map((_, i) => `./assets/img/demo${i+1}.jpg`)
 
   return (
-    <div 
-      className={styles.settingsBGContent}
-      style={props.style}
-    >
+    <div className={styles.settingsBGContent}>
       <div className={styles.imageGrid}>
 
         <label htmlFor="bg-upload-button" className={styles.bgUpload}>

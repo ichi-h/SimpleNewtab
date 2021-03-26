@@ -1,8 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-export type Display = 'none' | 'initial'
-export type Visibility = 'hidden' | 'visible'
-
 interface ShortcutItems {
   name: string,
   link: string
@@ -12,9 +9,8 @@ interface NewtabState {
   bg: string,
   bgColor: string,
   shortcuts: ShortcutItems[],
-  shortcutsVisible: Visibility,
-  popupDisplay: Display,
-  popupIndex: number
+  shortcutsIsShow: boolean,
+  settingsPopupIsShow: boolean
 }
 
 const shortcuts: ShortcutItems[] = [
@@ -53,12 +49,11 @@ const shortcuts: ShortcutItems[] = [
 ]
 
 const initialState: NewtabState = {
-  bg: 'url("../assets/img/demo1.jpg")',
+  bg: 'url("./assets/img/demo1.jpg")',
   bgColor: '#ffffff',
   shortcuts: shortcuts,
-  shortcutsVisible: 'visible',
-  popupDisplay: 'none',
-  popupIndex: -1
+  shortcutsIsShow: true,
+  settingsPopupIsShow: false
 }
 
 export const newtabSlice = createSlice({
@@ -80,30 +75,13 @@ export const newtabSlice = createSlice({
       state.shortcuts = action.payload
     },
 
-    toggleSCDisplay: state => {
-      switch (state.shortcutsVisible) {
-        case 'visible':
-          state.shortcutsVisible = 'hidden'
-          break
-        case 'hidden':
-          state.shortcutsVisible = 'visible'
-          break
-      }
+    toggleShortcuts: state => {
+      state.shortcutsIsShow = !state.shortcutsIsShow
     },
 
-    togglePopupDisplay: state => {
-      switch (state.popupDisplay) {
-        case 'none':
-          state.popupDisplay = 'initial'
-          state.popupIndex = 100
-          break
-
-        case 'initial':
-          state.popupDisplay = 'none'
-          state.popupIndex = -1
-          break
-      }
-    },
+    togglePopup: state => {
+      state.settingsPopupIsShow = !state.settingsPopupIsShow
+    }
   }
 })
 
@@ -111,6 +89,6 @@ export const {
   setBG,
   setBGColor,
   setShortcutItem,
-  toggleSCDisplay,
-  togglePopupDisplay
+  toggleShortcuts,
+  togglePopup
 } = newtabSlice.actions

@@ -1,9 +1,10 @@
 import { useAppDispatch, useAppSelector } from '../../lib/hooks'
-import { Display, togglePopupDisplay } from '../../lib/newtabSlice'
+import { } from '../../lib/newtabSlice'
 
 import styles from '../../styles/ShortcutsForm.module.css'
 
 const ShortcutsPopup: React.FC = () => {
+  if (true) return <></>
   return (
     <div className={styles.shortcutsPopup}>
       <form onSubmit={(e) => {e.preventDefault(); console.log(e)}}>

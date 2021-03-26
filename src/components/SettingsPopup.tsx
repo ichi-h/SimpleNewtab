@@ -1,38 +1,31 @@
 import { useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../lib/hooks'
-import { Display, togglePopupDisplay } from '../lib/newtabSlice'
+import { togglePopup } from '../lib/newtabSlice'
 
 import BGContent from './SettingsPopup/BGContent'
 import SCContent from './SettingsPopup/SCContent'
 
 import styles from '../styles/SettingsPopup.module.css'
 
-export interface ContentStyle {
-  style: { display: Display }
+export interface ContentProps {
+  bool: boolean
 }
 
-const Popup: React.FC = () => {
-  const popupDisplay = useAppSelector(state => state.popupDisplay)
-  const popupIndex = useAppSelector(state => state.popupIndex)
+const SettingsPopup: React.FC = () => {
+  const setSettingsPopupIsShow = useAppSelector(state => state.settingsPopupIsShow)
 
-  const [contentDisplay, setContentDisplay] = useState(
-    ['initial', 'none'] as Display[]
-  )
+  const [contentDisplay, setContentDisplay] = useState([true, false])
 
-  const onBGRadioClick = () => setContentDisplay(['initial', 'none'])
-  const onSCRadioClick = () => setContentDisplay(['none', 'initial'])
+  const onBGRadioClick = () => setContentDisplay([true, false])
+  const onSCRadioClick = () => setContentDisplay([false, true])
 
   const dispatch = useAppDispatch()
-  const onCloseButtonClick = () => dispatch(togglePopupDisplay())
+  const onCloseButtonClick = () => dispatch(togglePopup())
+
+  if (!setSettingsPopupIsShow) return <></>
 
   return (
-    <div
-      className={styles.settingsPopup}
-      style={{
-        display: popupDisplay,
-        zIndex: popupIndex
-      }}
-    >
+    <div className={styles.settingsPopup}>
       <div className={styles.outerSettings}>
         <div className={styles.settings}>
 
@@ -66,8 +59,8 @@ const Popup: React.FC = () => {
             </div>
 
             <div className={styles.settingsRight}>
-              <BGContent style={{ display: contentDisplay[0] }} />
-              <SCContent style={{ display: contentDisplay[1] }} />
+              <BGContent bool={contentDisplay[0]} />
+              <SCContent bool={contentDisplay[1]} />
             </div>
           </div>
 
@@ -91,4 +84,4 @@ const Popup: React.FC = () => {
   )
 }
 
-export default Popup
+export default SettingsPopup

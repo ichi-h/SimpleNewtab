@@ -7,7 +7,7 @@ import styles from '../styles/Shortcuts.module.css'
 
 const Shortcuts: React.FC = () => {
   const shortcuts = useAppSelector(state => state.shortcuts)
-  const shortcutsVisible = useAppSelector(state => state.shortcutsVisible)
+  const shortcutsIsShow = useAppSelector(state => state.shortcutsIsShow)
 
   const dispatch = useAppDispatch()
 
@@ -16,13 +16,12 @@ const Shortcuts: React.FC = () => {
     dispatch(setShortcutItem(shortcuts_))
   }
 
-  if (shortcutsVisible === 'hidden') return <div></div>
+  if (!shortcutsIsShow) return <></>
 
   return (
     <div
       className={styles.shortcuts}
       id="link-items"
-      style={{ visibility: shortcutsVisible }}
     >
       {
         shortcuts.map((item, i) => {
