@@ -6,12 +6,14 @@ interface ShortcutItems {
 }
 
 type SearchEngine = 'Google' | 'Bing' | 'DuckDuckGo'
+export type TextColor = 'black' | 'white'
 
 interface NewtabState {
   bg: string,
   bgColor: string,
   shortcuts: ShortcutItems[],
-  searchAction: string
+  searchAction: string,
+  textColor: TextColor,
   shortcutsIsShow: boolean,
   formIsShow: boolean,
   settingsPopupIsShow: boolean
@@ -57,6 +59,7 @@ const initialState: NewtabState = {
   bgColor: '#ffffff',
   shortcuts: shortcuts,
   searchAction: 'https://www.google.com/search',
+  textColor: 'black',
   shortcutsIsShow: true,
   formIsShow: false,
   settingsPopupIsShow: false
@@ -98,6 +101,10 @@ export const newtabSlice = createSlice({
       }
     },
 
+    setTextColor: (state, action: PayloadAction<TextColor>) => {
+      state.textColor = action.payload
+    },
+
     toggleShortcuts: state => {
       state.shortcutsIsShow = !state.shortcutsIsShow
     },
@@ -117,6 +124,7 @@ export const {
   setBGColor,
   setShortcutItem,
   setSearchEngine,
+  setTextColor,
   toggleShortcuts,
   toggleForm,
   togglePopup

@@ -8,6 +8,7 @@ import styles from '../styles/Shortcuts.module.css'
 const Shortcuts: React.FC = () => {
   const shortcuts = useAppSelector(state => state.shortcuts)
   const shortcutsIsShow = useAppSelector(state => state.shortcutsIsShow)
+  const textColor = useAppSelector(state => state.textColor)
 
   const dispatch = useAppDispatch()
 
@@ -41,7 +42,12 @@ const Shortcuts: React.FC = () => {
                     src={`https://www.google.com/s2/favicons?domain=${item.url}`}
                   />
                 </div>
-                <p className={styles.shortcutText}>{ item.name }</p>
+                <p
+                  className={styles.shortcutText}
+                  style={{ color: textColor }}
+                >
+                  { item.name }
+                </p>
               </a>
               <label
                 className={styles.removeShortcut}
@@ -71,7 +77,12 @@ const Shortcuts: React.FC = () => {
           <div className={styles.shortcutCircle}>
             <i className="icon-plus"></i>
           </div>
-          <p className={styles.shortcutText}>Add</p>
+          <p
+            className={styles.shortcutText}
+            style={{ color: textColor }}
+          >
+            Add
+          </p>
         </a>
       </div>
 

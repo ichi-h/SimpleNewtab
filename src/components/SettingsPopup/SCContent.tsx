@@ -1,13 +1,17 @@
 import { useAppDispatch, useAppSelector } from '../../lib/hooks'
-import { toggleShortcuts } from '../../lib/newtabSlice'
+import { TextColor, setTextColor, toggleShortcuts } from '../../lib/newtabSlice'
 import styles from '../../styles/PopupContent.module.css'
 
 const SCContent: React.FC = () => {
   const shortcutsIsShow = useAppSelector(state => state.shortcutsIsShow)
+  const textColor = useAppSelector(state => state.textColor)
 
   const dispatch = useAppDispatch()
   const toggleCheck = () => {
     dispatch(toggleShortcuts())
+  }
+  const changeTextColor = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    dispatch(setTextColor(e.target.value as TextColor))
   }
 
   return (
@@ -30,7 +34,11 @@ const SCContent: React.FC = () => {
       </div>
 
       <h3 className={styles.SCh3}>Text color</h3>
-      <select className={styles.SCSelector} defaultValue="black">
+      <select
+        className={styles.SCSelector}
+        defaultValue={textColor}
+        onChange={changeTextColor}
+      >
         <option value="black">Black</option>
         <option value="white">White</option>
       </select>
