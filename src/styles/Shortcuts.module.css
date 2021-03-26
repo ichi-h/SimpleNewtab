@@ -13,7 +13,7 @@
     height: calc(4vw + 4rem + 2rem);
   }
 
-    .shortcutLink {
+    .shortcutURL {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -29,7 +29,7 @@
       transition: .1s;
     }
 
-    .shortcutLink:hover {
+    .shortcutURL:hover {
       background-color: #ffffff75;
     }
 
@@ -50,7 +50,13 @@
 
       .shortcutText {
         margin-top: 0.5rem;
-        font-size: 2rem;
+        font-size: 1.5rem;
+        text-align: center;
+
+        width: 4vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
 
     .removeShortcut {
@@ -65,7 +71,7 @@
       transition: .1s;
     }
 
-      .shortcutLink:hover ~ .removeShortcut {
+      .shortcutURL:hover ~ .removeShortcut {
         animation: fadein-remove-button .1s ease forwards;
         animation-delay: .5s;
       }

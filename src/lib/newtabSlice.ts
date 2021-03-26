@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 interface ShortcutItems {
   name: string,
-  link: string
+  url: string
 }
 
 interface NewtabState {
@@ -10,41 +10,42 @@ interface NewtabState {
   bgColor: string,
   shortcuts: ShortcutItems[],
   shortcutsIsShow: boolean,
+  formIsShow: boolean,
   settingsPopupIsShow: boolean
 }
 
 const shortcuts: ShortcutItems[] = [
   {
     name: 'YouTue',
-    link: 'https://www.youtube.com/'
+    url: 'https://www.youtube.com/'
   },
   {
     name: 'YouTue',
-    link: 'https://www.youtube.com/'
+    url: 'https://www.youtube.com/'
   },
   {
     name: 'YouTue',
-    link: 'https://www.youtube.com/'
+    url: 'https://www.youtube.com/'
   },
   {
     name: 'YouTue',
-    link: 'https://www.youtube.com/'
+    url: 'https://www.youtube.com/'
   },
   {
     name: 'YouTue',
-    link: 'https://www.youtube.com/'
+    url: 'https://www.youtube.com/'
   },
   {
     name: 'YouTue',
-    link: 'https://www.youtube.com/'
+    url: 'https://www.youtube.com/'
   },
   {
     name: 'YouTue',
-    link: 'https://www.youtube.com/'
+    url: 'https://www.youtube.com/'
   },
   {
     name: 'YouTue',
-    link: 'https://www.youtube.com/'
+    url: 'https://www.youtube.com/'
   },
 ]
 
@@ -53,6 +54,7 @@ const initialState: NewtabState = {
   bgColor: '#ffffff',
   shortcuts: shortcuts,
   shortcutsIsShow: true,
+  formIsShow: false,
   settingsPopupIsShow: false
 }
 
@@ -79,6 +81,10 @@ export const newtabSlice = createSlice({
       state.shortcutsIsShow = !state.shortcutsIsShow
     },
 
+    toggleForm: state => {
+      state.formIsShow = !state.formIsShow
+    },
+
     togglePopup: state => {
       state.settingsPopupIsShow = !state.settingsPopupIsShow
     }
@@ -90,5 +96,6 @@ export const {
   setBGColor,
   setShortcutItem,
   toggleShortcuts,
+  toggleForm,
   togglePopup
 } = newtabSlice.actions

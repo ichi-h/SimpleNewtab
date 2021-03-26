@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '../lib/hooks'
-import { setShortcutItem } from '../lib/newtabSlice'
+import { setShortcutItem , toggleForm } from '../lib/newtabSlice'
 
 import ShortcutForm from './Shortcuts/ShortcutsForm'
 
@@ -16,27 +16,29 @@ const Shortcuts: React.FC = () => {
     dispatch(setShortcutItem(shortcuts_))
   }
 
+  const onAddClick = () => dispatch(toggleForm())
+
   if (!shortcutsIsShow) return <></>
 
   return (
     <div
       className={styles.shortcuts}
-      id="link-items"
+      id="url-items"
     >
       {
         shortcuts.map((item, i) => {
           return (
             <div className={styles.shortcutItem} key={i}>
               <a
-                className={styles.shortcutLink}
-                href={item.link}
+                className={styles.shortcutURL}
+                href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <div className={styles.shortcutCircle}>
                   <img
                     className={styles.shortcutIcon}
-                    src={`https://www.google.com/s2/favicons?domain=${item.link}`}
+                    src={`https://www.google.com/s2/favicons?domain=${item.url}`}
                   />
                 </div>
                 <p className={styles.shortcutText}>{ item.name }</p>
@@ -58,12 +60,13 @@ const Shortcuts: React.FC = () => {
             </div>
         )})
       }
+
       <div className={styles.shortcutItem}>
         <a
-          className={styles.shortcutLink}
+          className={styles.shortcutURL}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => console.log('clicked')}
+          onClick={onAddClick}
         >
           <div className={styles.shortcutCircle}>
             <i className="icon-plus"></i>
