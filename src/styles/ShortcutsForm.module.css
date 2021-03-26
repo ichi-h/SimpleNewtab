@@ -1,0 +1,16 @@
+.shortcutsPopup {
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+
+  width: 30vw;
+  height: 30vh;
+  background-color: white;
+
+  font-size: 1.5rem;
+}

@@ -1,6 +1,8 @@
 import { useAppDispatch, useAppSelector } from '../lib/hooks'
 import { setShortcutItem } from '../lib/newtabSlice'
 
+import ShortcutForm from './Shortcuts/ShortcutsForm'
+
 import styles from '../styles/Shortcuts.module.css'
 
 const Shortcuts: React.FC = () => {
@@ -70,6 +72,8 @@ const Shortcuts: React.FC = () => {
           <p className={styles.shortcutText}>Add</p>
         </a>
       </div>
+
+      <ShortcutForm />
     </div>
   )
 }
