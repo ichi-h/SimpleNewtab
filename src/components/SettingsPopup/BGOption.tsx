@@ -1,9 +1,9 @@
 import { useAppDispatch, useAppSelector } from '../../lib/hooks'
 import { setBG, setBGColor } from '../../lib/newtabSlice'
 
-import styles from '../../styles/PopupContent.module.css'
+import styles from '../../styles/PopupOption.module.css'
 
-const BGContent: React.FC = () => {
+const BGOption: React.FC = () => {
   const dispatch = useAppDispatch()
 
   const onSampleImgClick = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
@@ -46,7 +46,7 @@ const BGContent: React.FC = () => {
   const sampleImages = new Array(4).fill('').map((_, i) => `./assets/img/demo${i+1}.jpg`)
 
   return (
-    <div className={styles.settingsBGContent}>
+    <div className={styles.settingsBGOption}>
       <h2 className={styles.BGh2}>Background</h2>
       <div className={styles.imageGrid}>
 
@@ -98,4 +98,4 @@ const BGContent: React.FC = () => {
   )
 }
 
-export default BGContent
+export default BGOption

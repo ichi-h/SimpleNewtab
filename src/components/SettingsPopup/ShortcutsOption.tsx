@@ -1,8 +1,8 @@
 import { useAppDispatch, useAppSelector } from '../../lib/hooks'
 import { TextColor, setTextColor, toggleShortcuts } from '../../lib/newtabSlice'
-import styles from '../../styles/PopupContent.module.css'
+import styles from '../../styles/PopupOption.module.css'
 
-const SCContent: React.FC = () => {
+const ShortcutsOption: React.FC = () => {
   const shortcutsIsShow = useAppSelector(state => state.shortcutsIsShow)
   const textColor = useAppSelector(state => state.textColor)
 
@@ -15,7 +15,7 @@ const SCContent: React.FC = () => {
   }
 
   return (
-    <div className={styles.settingsSCContent}>
+    <div className={styles.settingsShortcutsOption}>
       <h2 className={styles.SCh2}>Shortcuts</h2>
       <div className="show-shortcuts">
         <input
@@ -46,4 +46,4 @@ const SCContent: React.FC = () => {
   )
 }
 
-export default SCContent
+export default ShortcutsOption

@@ -1,8 +1,8 @@
 import { useAppDispatch, useAppSelector } from '../../lib/hooks'
 import { SearchEngine, setSearchEngine, toggleSearchBox } from '../../lib/newtabSlice'
-import styles from '../../styles/PopupContent.module.css'
+import styles from '../../styles/PopupOption.module.css'
 
-const SearchBoxContent: React.FC = () => {
+const SearchBoxOption: React.FC = () => {
   const searchBoxIsShow = useAppSelector(state => state.searchBoxIsShow)
   const searchEngine = useAppSelector(state => state.searchEngine)
   const dispatch = useAppDispatch()
@@ -17,7 +17,7 @@ const SearchBoxContent: React.FC = () => {
   }
 
   return (
-    <div className={styles.settingsSBContent}>
+    <div className={styles.settingsSBOption}>
       <h2 className={styles.SBh2}>Search box</h2>
       <div className="show-search-box">
         <input
@@ -49,4 +49,4 @@ const SearchBoxContent: React.FC = () => {
   )
 }
 
-export default SearchBoxContent
+export default SearchBoxOption

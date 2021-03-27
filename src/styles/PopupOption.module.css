@@ -1,4 +1,4 @@
-/* Background (BG) Content */
+/* Background (BG) Option */
 .BGh2 {
   font-size: 3rem;
   margin-bottom: 1rem;
@@ -62,7 +62,7 @@
   }
 
 
-/* SearchBox (SB) Content */
+/* SearchBox (SB) Option */
 .SBh2 {
   font-size: 3rem;
   margin-top: 3rem;
@@ -75,7 +75,7 @@
   margin-bottom: 1rem;
 }
 
-.settingsSBContent {
+.settingsSBOption {
   width: calc(9vw * 3 + 1rem * 2);
 }
 
@@ -85,7 +85,7 @@
   }
 
 
-/* Shortcuts (SC) Content  */
+/* Shortcuts (SC) Option  */
 .SCh2 {
   font-size: 3rem;
   margin-top: 3rem;
@@ -98,7 +98,7 @@
   margin-bottom: 1rem;
 }
 
-.settingsSCContent {
+.settingsShortcutsOption {
   width: calc(9vw * 3 + 1rem * 2);
 }
 
