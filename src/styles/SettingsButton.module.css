@@ -1,0 +1,10 @@
+/* SettingsButton */
+.settingsButton {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.settingsButton > input {
+  display: none;
+}

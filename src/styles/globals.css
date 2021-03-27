@@ -18,6 +18,17 @@ a {
 }
 
 /* fontello */
+.icon-cog:before {
+  font-size: 3rem;
+  cursor: pointer;
+  transition: .2s;
+  opacity: 0.3;
+}
+
+.icon-cog:hover::before {
+  opacity: 1;
+}
+
 .icon-cancel:before {
   font-size: 1.5rem;
 }

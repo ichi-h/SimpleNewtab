@@ -26,11 +26,3 @@
   width: 50vw;
   height: 50vh;
 }
-
-
-/* SettingsButton */
-.settingsButton {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-}
