@@ -19,15 +19,15 @@ const ShortcutsOption: React.FC = () => {
       <h2 className={styles.SCh2}>Shortcuts</h2>
       <div className="show-shortcuts">
         <input
-          className={styles.SCCheck}
-          id="sc-check"
+          className="switch"
+          id="sc-switch"
           type="checkbox"
           defaultChecked={shortcutsIsShow}
           onChange={toggleCheck}
         />
         <label
           className={styles.SCCheckLabel}
-          htmlFor="sc-check"
+          htmlFor="sc-switch"
         >
           Show shortcuts
         </label>

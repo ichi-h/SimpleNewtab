@@ -21,15 +21,15 @@ const SearchBarOption: React.FC = () => {
       <h2 className={styles.SBh2}>Search bar</h2>
       <div className="show-search-box">
         <input
-          className={styles.SBCheck}
-          id="sb-check"
+          className="sb switch"
+          id="sb-switch"
           type="checkbox"
           defaultChecked={searchBarIsShow}
           onChange={toggleCheck}
         />
         <label
           className={styles.SBCheckLabel}
-          htmlFor="sb-check"
+          htmlFor="sb-switch"
         >
           Show search bar
         </label>
