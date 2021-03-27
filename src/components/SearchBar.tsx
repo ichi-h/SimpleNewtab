@@ -55,6 +55,7 @@ const SearchBar: React.FC = () => {
             className={styles.searchBarTextBox}
             type="textbox"
             name="q"
+            placeholder="Search..."
             defaultValue={searchBarVal}
             onChange={updateSearchBar}
           />

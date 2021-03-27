@@ -9,8 +9,8 @@
 
   .shortcutItem {
     position: relative;
-    width: calc(3vw + 2rem);
-    height: calc(3vw + 3rem + 2rem);
+    width: calc(3vw + 4rem);
+    height: calc(3vw + 4rem + 2rem);
     margin: 0 1rem;
   }
 
@@ -25,13 +25,14 @@
       align-items: center;
       flex-direction: column;
 
-      padding: 1rem 0;
+      padding: 1rem 0.5rem;
       cursor: pointer;
       transition: .1s;
     }
 
     .shortcutURL:hover {
-      background-color: #ffffff75;
+      background-color: #ffffff1f;
+      border-radius: 3%;
     }
 
       .shortcutCircle {
@@ -50,7 +51,7 @@
       }
 
       .shortcutText {
-        margin-top: 0.5rem;
+        margin-top: 1rem;
         font-size: 1.5rem;
         text-align: center;
 
@@ -62,8 +63,8 @@
 
     .removeShortcut {
       position: absolute;
-      top: 0.5rem;
-      right: 0;
+      top: 0.75rem;
+      right: 0.75rem;
 
       z-index: 2;
 

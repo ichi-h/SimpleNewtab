@@ -1,11 +1,11 @@
 .searchBar {
-  margin: 0 0 20px;
+  margin-bottom: 3rem;
 }
 
 .searchBarItem {
   position: relative;
-  width: 20vw;
-  height: calc(3vh + 1rem);
+  width: 30vw;
+  height: calc(3vh + 1.5rem);
 }
 
 .searchButton {
