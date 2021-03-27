@@ -38,16 +38,11 @@ const BGOption: React.FC = () => {
     }
   }
 
-  const bgColor = useAppSelector(state => state.bgColor)
-  const changeBGColor = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setBGColor(e.target.value))
-  }
-
   const sampleImages = new Array(4).fill('').map((_, i) => `./assets/img/demo${i+1}.jpg`)
 
   return (
     <div className={styles.settingsBGOption}>
-      <h2 className={styles.BGh2}>Background</h2>
+      <h2 className={styles.settingsH2}>Background</h2>
       <div className={styles.imageGrid}>
 
         <label htmlFor="bg-upload-button" className={styles.bgUpload}>
@@ -81,18 +76,6 @@ const BGOption: React.FC = () => {
           )})
         }
 
-      </div>
-
-      <div className={styles.bgColor}>
-        <p className={styles.bgColorText}>Background color:</p>
-        <input
-          className={styles.bgColorPicker}
-          id="bg-color"
-          type="color"
-          name="bg-color"
-          defaultValue={bgColor}
-          onChange={changeBGColor}
-        />
       </div>
     </div>
   )

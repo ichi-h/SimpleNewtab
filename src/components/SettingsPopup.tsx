@@ -2,6 +2,7 @@ import { useAppDispatch, useAppSelector } from '../lib/hooks'
 import { togglePopup } from '../lib/newtabSlice'
 
 import BGOption from './SettingsPopup/BGOption'
+import ColorOption from './SettingsPopup/ColorOption'
 import SearchBarOption from './SettingsPopup/SearchBarOption'
 import ShortcutsOption from './SettingsPopup/ShortcutsOption'
 
@@ -22,6 +23,7 @@ const SettingsPopup: React.FC = () => {
       <div className={styles.settingsTop}>
         <div className={styles.settingsScrollbar}>
           <BGOption />
+          <ColorOption />
           <SearchBarOption />
           <ShortcutsOption />
         </div>

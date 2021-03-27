@@ -18,33 +18,38 @@ const SearchBarOption: React.FC = () => {
 
   return (
     <div className={styles.settingsSBOption}>
-      <h2 className={styles.SBh2}>Search bar</h2>
-      <div className="show-search-box">
-        <input
-          className="sb switch"
-          id="sb-switch"
-          type="checkbox"
-          defaultChecked={searchBarIsShow}
-          onChange={toggleCheck}
-        />
-        <label
-          className={styles.SBCheckLabel}
-          htmlFor="sb-switch"
-        >
-          Show search bar
-        </label>
-      </div>
+      <h2 className={styles.settingsH2_2}>Search bar</h2>
+      <ul className={styles.settingsUl}>
+        <li>
+          <div className={styles.outer}>
+            <p className={styles.left}>Show search bar</p>
+            <div className={styles.right}>
+              <input
+                className="sb switch"
+                id="sb-switch"
+                type="checkbox"
+                defaultChecked={searchBarIsShow}
+                onChange={toggleCheck}
+              />
+            </div>
+          </div>
+        </li>
 
-      <h3 className={styles.SBh3}>Search engine</h3>
-      <select
-        className={styles.SBSelector}
-        defaultValue={searchEngine}
-        onChange={changeSearchEngine}
-      >
-        <option value="Google">Google</option>
-        <option value="Bing">Bing</option>
-        <option value="DuckDuckGo">DuckDuckGo</option>
-      </select>
+        <li>
+          <div className={styles.outer}>
+            <p className={styles.left}>Search Engine</p>
+            <select
+              className={styles.right}
+              defaultValue={searchEngine}
+              onChange={changeSearchEngine}
+            >
+              <option value="Google">Google</option>
+              <option value="Bing">Bing</option>
+              <option value="DuckDuckGo">DuckDuckGo</option>
+            </select>
+          </div>
+        </li>
+      </ul>
     </div>
   )
 }
