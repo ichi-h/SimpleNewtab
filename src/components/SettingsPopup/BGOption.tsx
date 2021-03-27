@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from '../../lib/hooks'
-import { setBG, setBGColor } from '../../lib/newtabSlice'
+import { useAppDispatch } from '../../lib/hooks'
+import { setBG } from '../../lib/newtabSlice'
 
 import styles from '../../styles/PopupOption.module.css'
 

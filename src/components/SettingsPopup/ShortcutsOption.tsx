@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '../../lib/hooks'
-import { TextColor, setTextColor, toggleShortcuts } from '../../lib/newtabSlice'
+import { toggleShortcuts } from '../../lib/newtabSlice'
 import styles from '../../styles/PopupOption.module.css'
 
 const ShortcutsOption: React.FC = () => {
