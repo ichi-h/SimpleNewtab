@@ -66,6 +66,8 @@ h2.settingsH2_2 {
     user-select: none;
     -webkit-user-select: none;
     -webkit-user-drag: none;
+
+    box-shadow: 3px 3px 10px 0 #0000001c;
   }
 
   .noImageButton, .bgUpload {

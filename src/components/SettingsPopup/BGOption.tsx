@@ -1,9 +1,10 @@
-import { useAppDispatch } from '../../lib/hooks'
+import { useAppDispatch, useAppSelector } from '../../lib/hooks'
 import { setBG } from '../../lib/newtabSlice'
 
 import styles from '../../styles/PopupOption.module.css'
 
 const BGOption: React.FC = () => {
+  const bgColor = useAppSelector(state => state.bgColor)
   const dispatch = useAppDispatch()
 
   const onSampleImgClick = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
@@ -61,8 +62,8 @@ const BGOption: React.FC = () => {
         <div
           className={styles.noImageButton}
           onClick={onNoImgClick}
+          style={{ backgroundColor: bgColor }}
         >
-          <p>No Image</p>
         </div>
 
         {
