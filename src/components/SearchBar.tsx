@@ -35,6 +35,7 @@ const SearchBar: React.FC = () => {
   return (
     <form
       className={styles.searchBar}
+      autoComplete="off"
       action={searchAction}
       method="get"
       onSubmit={onSubmit}
