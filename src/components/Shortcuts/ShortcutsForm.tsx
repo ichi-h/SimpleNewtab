@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useAppDispatch, useAppSelector } from '../../lib/hooks'
 import { setShortcutItem, toggleForm } from '../../lib/newtabSlice'
 
@@ -10,6 +10,12 @@ const ShortcutsPopup: React.FC = () => {
   const dispatch = useAppDispatch()
   const [name, setName] = useState('')
   const [url, setURL] = useState('')
+  const inputRef = useRef() as React.MutableRefObject<HTMLInputElement>
+
+  useEffect(() => {
+    if (!formIsShow) return
+    inputRef.current.focus()
+  })
 
   const onNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value)
@@ -41,14 +47,21 @@ const ShortcutsPopup: React.FC = () => {
 
   return (
     <div className={styles.shortcutsPopup}>
-      <form onSubmit={onSubmit}>
+      <h2 className={styles.formH2}>Add a shortcut</h2>
+      <form
+        className={styles.shortcutsForm}
+        autoComplete="off"
+        onSubmit={onSubmit}
+      >
         <div className={styles.formName}>
           <label htmlFor="form-name">Name:</label>
           <br />
           <input
+            className={styles.formTextbox}
             id="form-name"
             type="text"
             name="name"
+            ref={inputRef}
             defaultValue={name}
             required={true}
             onChange={onNameChange}
@@ -58,6 +71,7 @@ const ShortcutsPopup: React.FC = () => {
           <label htmlFor="form-url">URL:</label>
           <br />
           <input
+            className={styles.formTextbox}
             id="form-url"
             type="text"
             name="url"
@@ -68,13 +82,15 @@ const ShortcutsPopup: React.FC = () => {
         </div>
         <div className={styles.formButtons}>
           <input
-            type="submit"
-            value="Add"
+            className={`${styles.formButton} ${styles.cancel}`}
+            type="button"
+            value="Cancel"
+            onClick={onCancelClick}
           />
           <input
-            type="button"
-            value="cancel"
-            onClick={onCancelClick}
+            className={`${styles.formButton} ${styles.submit}`}
+            type="submit"
+            value="Add"
           />
         </div>
       </form>

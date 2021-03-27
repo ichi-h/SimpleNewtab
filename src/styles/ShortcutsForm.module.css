@@ -1,3 +1,8 @@
+.formH2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
 .shortcutsPopup {
   position: absolute;
 
@@ -8,9 +13,72 @@
   align-content: center;
   flex-direction: column;
 
-  width: 30vw;
-  height: 30vh;
+  padding: 3rem;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
   background-color: white;
+  box-shadow: 5px 5px 10px 0 #0000001c;
 
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  z-index: 10;
 }
+
+.formName,
+.formURL {
+  margin-bottom: 1rem;
+}
+
+.formTextbox {
+  border: 0;
+  outline: 0;
+  border: 1px solid #ccc;
+  font-size: 1.5rem;
+
+  width: 20vw;
+}
+
+.formButtons {
+  padding-top: 2rem;
+  text-align: right;
+}
+
+  .formButton {
+    background: none;
+    outline: 0;
+    border: 0;
+
+    width: 10rem;
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10%;
+    cursor: pointer;
+    transition: .1s;
+  }
+
+    .formButton.submit {
+      background-color: #275EFE;
+      color: white;
+    }
+
+      .formButton.submit:hover {
+        background-color: #4775ff;
+      }
+
+      .formButton.submit:active {
+        background-color: #204aca;
+      }
+
+    .formButton.cancel {
+      color: #275EFE;
+      border: 1px solid rgb(209, 209, 209);
+      margin-right: 1rem;
+    }
+
+      .formButton.cancel:hover {
+        background-color: #e8efff;
+      }
+
+      .formButton.cancel:active {
+        background-color: #c7ccda;
+      }
