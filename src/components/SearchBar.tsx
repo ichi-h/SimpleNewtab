@@ -50,7 +50,7 @@ const SearchBar: React.FC = () => {
               name="btnG"
               value="Search"
             />
-            <i className="icon-search" />
+            <i className="searchbar icon-search" />
           </label>
           <input
             className={styles.searchBarTextBox}

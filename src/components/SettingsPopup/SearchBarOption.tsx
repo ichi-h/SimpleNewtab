@@ -18,7 +18,9 @@ const SearchBarOption: React.FC = () => {
 
   return (
     <div className={styles.settingsSBOption}>
-      <h2 className={styles.settingsH2_2}>Search bar</h2>
+      <h2 className={styles.settingsH2_2}>
+        <i className="icon-search" /> Search bar
+      </h2>
       <ul className={styles.settingsUl}>
         <li>
           <div className={styles.outer}>

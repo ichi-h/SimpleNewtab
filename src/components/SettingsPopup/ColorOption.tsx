@@ -17,7 +17,9 @@ const ColorOption: React.FC = () => {
 
   return (
     <div className={styles.settingsColorOption}>
-      <h2 className={styles.settingsH2_2}>Color</h2>
+      <h2 className={styles.settingsH2_2}>
+        <i className="icon-brush" /> Color
+      </h2>
       <ul className={styles.settingsUl}>
         <li>
           <div className={styles.outer}>

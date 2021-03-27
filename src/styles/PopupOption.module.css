@@ -6,19 +6,15 @@
   width: calc(9vw * 3 + 1rem * 2);
 }
 
-h2.settingsH2 {
+h2.settingsH2,
+h2.settingsH2_2 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  transform: translateX(-3rem);
 }
 
 h2.settingsH2_2 {
-  font-size: 3rem;
   margin-top: 3rem;
-  margin-bottom: 1rem;
-}
-
-.settingsUl {
-  list-style: none;
 }
 
   .settingsUl > li {

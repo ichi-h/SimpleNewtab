@@ -12,7 +12,9 @@ const ShortcutsOption: React.FC = () => {
 
   return (
     <div className={styles.settingsShortcutsOption}>
-      <h2 className={styles.settingsH2_2}>Shortcuts</h2>
+      <h2 className={styles.settingsH2_2}>
+        <i className="icon-link" /> Shortcuts
+      </h2>
       <ul className={styles.settingsUl}>
         <li>
           <div className={styles.outer}>

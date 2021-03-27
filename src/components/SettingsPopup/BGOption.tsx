@@ -42,7 +42,9 @@ const BGOption: React.FC = () => {
 
   return (
     <div className={styles.settingsBGOption}>
-      <h2 className={styles.settingsH2}>Background</h2>
+      <h2 className={styles.settingsH2}>
+        <i className="icon-picture" /> Background
+      </h2>
       <div className={styles.imageGrid}>
 
         <label htmlFor="bg-upload-button" className={styles.bgUpload}>
@@ -53,7 +55,7 @@ const BGOption: React.FC = () => {
             accept="image/*"
             onChange={onFileUpload}
           />
-          <p>Upload</p>
+          <p><i className="icon-upload" />Upload</p>
         </label>
 
         <div
