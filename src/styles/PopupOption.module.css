@@ -60,18 +60,19 @@ h2.settingsH2_2 {
   .bgThumbnail, .noImageButton, .bgUpload {
     width: 9vw;
     height: 6vw;
-    border-radius: 3%;
+    border-radius: 5px;
 
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
     -webkit-user-drag: none;
+    transition: .1s;
 
     box-shadow: 3px 3px 10px 0 #0000001c;
   }
 
   .noImageButton, .bgUpload {
-    border: 1px solid gray;
+    border: 1px solid rgb(231, 231, 231);
 
     display: flex;
     justify-content: center;
@@ -79,6 +80,15 @@ h2.settingsH2_2 {
 
     font-size: 2rem;
   }
+
+    .bgThumbnail:hover,
+    .noImageButton:hover {
+      opacity: 0.9;
+    }
+
+    .bgUpload:hover {
+      background-color: rgb(248, 248, 248);
+    }
 
   .bgUploadButton {
     width: 9vw;
