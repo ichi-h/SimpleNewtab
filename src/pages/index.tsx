@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import SearchBar from '../components/SearchBar'
 import Shortcuts from '../components/Shortcuts'
 import SettingsButton from '../components/SettingsButton'
@@ -11,23 +12,29 @@ export default function Home() {
   const bgColor = useAppSelector(state => state.bgColor)
 
   return (
-    <div
-      className={styles.newtab}
-      style={{
-        backgroundImage: bg,
-        backgroundColor: bgColor
-      }}
-    >
+    <>
+      <Head>
+        <title>New tab</title>
+      </Head>
 
-      <SettingsPopup />
+      <div
+        className={styles.newtab}
+        style={{
+          backgroundImage: bg,
+          backgroundColor: bgColor
+        }}
+      >
 
-      <div className={styles.content}>
-        <SearchBar />
-        <Shortcuts />
+        <SettingsPopup />
+
+        <div className={styles.content}>
+          <SearchBar />
+          <Shortcuts />
+        </div>
+
+        <SettingsButton />
+
       </div>
-
-      <SettingsButton />
-
-    </div>
+    </>
   )
 }
