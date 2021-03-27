@@ -60,7 +60,10 @@ const Shortcuts: React.FC = () => {
                   onClick={() => removeShortcut(i)}
                 />
                 <div className={styles.removeIcon}>
-                  <i className="icon-cancel" />
+                  <i
+                    className="icon-cancel"
+                    style={{ color: textColor }}
+                  />
                 </div>
               </label>
             </div>
