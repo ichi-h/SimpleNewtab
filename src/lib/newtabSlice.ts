@@ -17,7 +17,7 @@ interface NewtabState {
   shortcutsIsShow: boolean,
   formIsShow: boolean,
   settingsPopupIsShow: boolean,
-  searchBoxIsShow: boolean
+  searchBarIsShow: boolean
 }
 
 const shortcuts: ShortcutItems[] = [
@@ -64,7 +64,7 @@ const initialState: NewtabState = {
   shortcutsIsShow: true,
   formIsShow: false,
   settingsPopupIsShow: false,
-  searchBoxIsShow: true
+  searchBarIsShow: true
 }
 
 export const newtabSlice = createSlice({
@@ -106,8 +106,8 @@ export const newtabSlice = createSlice({
       state.settingsPopupIsShow = !state.settingsPopupIsShow
     },
 
-    toggleSearchBox: state => {
-      state.searchBoxIsShow = !state.searchBoxIsShow
+    toggleSearchBar: state => {
+      state.searchBarIsShow = !state.searchBarIsShow
     }
   }
 })
@@ -121,5 +121,5 @@ export const {
   toggleShortcuts,
   toggleForm,
   togglePopup,
-  toggleSearchBox
+  toggleSearchBar
 } = newtabSlice.actions

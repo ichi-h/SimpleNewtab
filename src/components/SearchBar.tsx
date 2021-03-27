@@ -2,9 +2,9 @@ import { useAppSelector } from '../lib/hooks'
 
 import styles from '../styles/Home.module.css'
 
-const SearchBox: React.FC = () => {
+const SearchBar: React.FC = () => {
   const searchEngine = useAppSelector(state => state.searchEngine)
-  const searchBoxIsShow = useAppSelector(state => state.searchBoxIsShow)
+  const searchBarIsShow = useAppSelector(state => state.searchBarIsShow)
 
   let searchAction: string
   switch (searchEngine) {
@@ -19,10 +19,10 @@ const SearchBox: React.FC = () => {
       break
   }
 
-  if (!searchBoxIsShow) return <></>
+  if (!searchBarIsShow) return <></>
 
   return (
-    <div className={styles.searchBox}>
+    <div className={styles.searchBar}>
       <form action={searchAction} method="get">
           <input type="hidden" name="hl" />
           <input type="textbox" name="q" />
@@ -32,4 +32,4 @@ const SearchBox: React.FC = () => {
   )
 }
 
-export default SearchBox
+export default SearchBar

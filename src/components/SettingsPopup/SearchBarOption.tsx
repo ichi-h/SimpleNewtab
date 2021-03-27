@@ -1,14 +1,14 @@
 import { useAppDispatch, useAppSelector } from '../../lib/hooks'
-import { SearchEngine, setSearchEngine, toggleSearchBox } from '../../lib/newtabSlice'
+import { SearchEngine, setSearchEngine, toggleSearchBar } from '../../lib/newtabSlice'
 import styles from '../../styles/PopupOption.module.css'
 
-const SearchBoxOption: React.FC = () => {
-  const searchBoxIsShow = useAppSelector(state => state.searchBoxIsShow)
+const SearchBarOption: React.FC = () => {
+  const searchBarIsShow = useAppSelector(state => state.searchBarIsShow)
   const searchEngine = useAppSelector(state => state.searchEngine)
   const dispatch = useAppDispatch()
 
   const toggleCheck = () => {
-    dispatch(toggleSearchBox())
+    dispatch(toggleSearchBar())
   }
 
   const changeSearchEngine = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -18,20 +18,20 @@ const SearchBoxOption: React.FC = () => {
 
   return (
     <div className={styles.settingsSBOption}>
-      <h2 className={styles.SBh2}>Search box</h2>
+      <h2 className={styles.SBh2}>Search bar</h2>
       <div className="show-search-box">
         <input
           className={styles.SBCheck}
           id="sb-check"
           type="checkbox"
-          defaultChecked={searchBoxIsShow}
+          defaultChecked={searchBarIsShow}
           onChange={toggleCheck}
         />
         <label
           className={styles.SBCheckLabel}
           htmlFor="sb-check"
         >
-          Show search box
+          Show search bar
         </label>
       </div>
 
@@ -49,4 +49,4 @@ const SearchBoxOption: React.FC = () => {
   )
 }
 
-export default SearchBoxOption
+export default SearchBarOption

@@ -1,4 +1,4 @@
-import SearchBox from '../components/SearchBox'
+import SearchBar from '../components/SearchBar'
 import Shortcuts from '../components/Shortcuts'
 import SettingsButton from '../components/SettingsButton'
 import SettingsPopup from '../components/SettingsPopup'
@@ -22,7 +22,7 @@ export default function Home() {
       <SettingsPopup />
 
       <div className={styles.content}>
-        <SearchBox />
+        <SearchBar />
         <Shortcuts />
       </div>
 
