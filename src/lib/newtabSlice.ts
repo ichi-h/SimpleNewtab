@@ -6,7 +6,7 @@ interface ShortcutItems {
 }
 
 export type SearchEngine = 'Google' | 'Bing' | 'DuckDuckGo'
-export type TextColor = 'black' | 'white'
+export type TextColor = 'black' | 'gray' | 'white'
 
 interface NewtabState {
   bg: string,

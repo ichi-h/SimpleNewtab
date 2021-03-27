@@ -40,6 +40,7 @@ const ShortcutsOption: React.FC = () => {
         onChange={changeTextColor}
       >
         <option value="black">Black</option>
+        <option value="gray">Gray</option>
         <option value="white">White</option>
       </select>
     </div>
