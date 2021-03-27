@@ -32,11 +32,13 @@ const SettingsPopup: React.FC = () => {
       <div className={styles.settingsBottom}>
         <div className={styles.settingsButton}>
           <input
+            className="btn-cancel"
             type="button"
             value="close"
             onClick={onCloseButtonClick}
           />
           <input
+            className="btn-ok"
             type="button"
             value="OK"
             onClick={onCloseButtonClick}

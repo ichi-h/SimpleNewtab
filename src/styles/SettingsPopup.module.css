@@ -46,7 +46,9 @@
 
   .settingsBottom {
     width: 100%;
-    height: 10%;
+    height: auto;
+    margin: 1rem;
+    padding-right: 1rem;
   }
 
     .settingsButton {

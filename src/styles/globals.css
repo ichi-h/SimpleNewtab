@@ -17,6 +17,51 @@ a {
   box-sizing: border-box;
 }
 
+input[type="button"],
+input[type="submit"] {
+  background: none;
+  outline: 0;
+  border: 0;
+
+  width: 10rem;
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 10px;
+  -webkit-border-radius: 10%;
+  cursor: pointer;
+  transition: .1s;
+}
+
+  input[type="button"].btn-ok,
+  input[type="submit"].btn-ok {
+    background-color: #275EFE;
+    color: white;
+  }
+
+    input[type="button"].btn-ok:hover,
+    input[type="submit"].btn-ok:hover {
+      background-color: #4775ff;
+    }
+
+    input[type="button"].btn-ok:active, 
+    input[type="submit"].btn-ok:active {
+      background-color: #204aca;
+    }
+
+  input[type="button"].btn-cancel {
+    color: #275EFE;
+    border: 1px solid rgb(209, 209, 209);
+    margin-right: 1rem;
+  }
+
+    input[type="button"].btn-cancel:hover {
+      background-color: #e8efff;
+    }
+
+    input[type="button"].btn-cancel:active {
+      background-color: #c7ccda;
+    }
+
 /* fontello */
 .icon-cog:before {
   font-size: 3rem;

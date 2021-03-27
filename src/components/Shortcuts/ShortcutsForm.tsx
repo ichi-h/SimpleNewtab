@@ -82,13 +82,13 @@ const ShortcutsPopup: React.FC = () => {
         </div>
         <div className={styles.formButtons}>
           <input
-            className={`${styles.formButton} ${styles.cancel}`}
+            className="btn-cancel"
             type="button"
             value="Cancel"
             onClick={onCancelClick}
           />
           <input
-            className={`${styles.formButton} ${styles.submit}`}
+            className="btn-ok"
             type="submit"
             value="Add"
           />
