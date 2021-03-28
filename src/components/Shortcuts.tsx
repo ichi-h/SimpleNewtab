@@ -34,8 +34,6 @@ const Shortcuts: React.FC = () => {
               <a
                 className={styles.shortcutURL}
                 href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 <div className={styles.shortcutCircle}>
                   <img
@@ -74,8 +72,6 @@ const Shortcuts: React.FC = () => {
       <div className={styles.shortcutItem}>
         <a
           className={styles.shortcutURL}
-          target="_blank"
-          rel="noopener noreferrer"
           onClick={onAddClick}
         >
           <div className={styles.shortcutCircle}>
