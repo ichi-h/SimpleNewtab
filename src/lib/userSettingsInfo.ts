@@ -42,6 +42,7 @@ export function toRedux(str: string): ShortcutItems[] {
 
   let shortcuts = []
   for (let item of newStrList) {
+    if (item === '') break
     shortcuts.push(JSON.parse(item))
   }
 
