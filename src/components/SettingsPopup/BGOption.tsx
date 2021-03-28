@@ -25,6 +25,12 @@ const BGOption: React.FC = () => {
       return
     }
 
+    let fileSizeLimit = 3145728 // = 3.0 MB
+    if (fileSizeLimit < uploadedBG.size) {
+      alert(`Error: The file size of "${uploadedBG.name}" exceeds the limit allowed. Please upload an image that is under 3 MB.`)
+      return
+    }
+
     let BGReader = new FileReader()
 
     BGReader.onload = (e) => {
