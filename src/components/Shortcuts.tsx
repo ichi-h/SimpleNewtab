@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '../lib/hooks'
-import { setShortcutItem , toggleForm } from '../lib/newtabSlice'
+import { save, setShortcutItem , toggleForm } from '../lib/newtabSlice'
 
 import ShortcutForm from './Shortcuts/ShortcutsForm'
 
@@ -15,6 +15,7 @@ const Shortcuts: React.FC = () => {
   const removeShortcut = (index: number ) => {
     let shortcuts_ = shortcuts.filter((_, i) => i !== index)
     dispatch(setShortcutItem(shortcuts_))
+    dispatch(save())
   }
 
   const onAddClick = () => dispatch(toggleForm())
