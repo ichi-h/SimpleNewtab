@@ -1,5 +1,6 @@
 import { useAppDispatch, useAppSelector } from '../../lib/hooks'
-import { SearchEngine, setSearchEngine, toggleSearchBar } from '../../lib/newtabSlice'
+import { setSearchEngine, toggleSearchBar } from '../../lib/newtabSlice'
+import { SearchEngine } from '../../lib/userSettingsInfo'
 import styles from '../../styles/PopupOption.module.css'
 
 const SearchBarOption: React.FC = () => {

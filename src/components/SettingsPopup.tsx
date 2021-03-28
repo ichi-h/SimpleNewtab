@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '../lib/hooks'
-import { togglePopup } from '../lib/newtabSlice'
+import { load, save, togglePopup } from '../lib/newtabSlice'
 
 import BGOption from './SettingsPopup/BGOption'
 import ColorOption from './SettingsPopup/ColorOption'
@@ -12,7 +12,14 @@ const SettingsPopup: React.FC = () => {
   const setSettingsPopupIsShow = useAppSelector(state => state.settingsPopupIsShow)
 
   const dispatch = useAppDispatch()
-  const onCloseButtonClick = () => dispatch(togglePopup())
+  const onOkButtonClick = () => {
+    dispatch(save())
+    dispatch(togglePopup())
+  }
+  const onCloseButtonClick = () => {
+    dispatch(load())
+    dispatch(togglePopup())
+  }
 
   if (!setSettingsPopupIsShow) return <></>
 
@@ -41,7 +48,7 @@ const SettingsPopup: React.FC = () => {
             className="btn-ok"
             type="button"
             value="OK"
-            onClick={onCloseButtonClick}
+            onClick={onOkButtonClick}
           />
         </div>
       </div>

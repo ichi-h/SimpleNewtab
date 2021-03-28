@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { useAppDispatch, useAppSelector } from '../../lib/hooks'
-import { setShortcutItem, toggleForm } from '../../lib/newtabSlice'
+import { save, setShortcutItem, toggleForm } from '../../lib/newtabSlice'
 
 import styles from '../../styles/ShortcutsForm.module.css'
 
@@ -41,6 +41,8 @@ const ShortcutsPopup: React.FC = () => {
     dispatch(toggleForm())
     setName('')
     setURL('')
+
+    dispatch(save())
   }
 
   if (!formIsShow) return <></>

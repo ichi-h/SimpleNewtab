@@ -1,5 +1,6 @@
 import { useAppDispatch, useAppSelector } from '../../lib/hooks'
-import { TextColor, setBGColor, setTextColor } from '../../lib/newtabSlice'
+import { setBGColor, setTextColor } from '../../lib/newtabSlice'
+import { TextColor } from '../../lib/userSettingsInfo'
 import styles from '../../styles/PopupOption.module.css'
 
 const ColorOption: React.FC = () => {

@@ -1,15 +1,26 @@
+import { useState, useEffect } from 'react'
 import Head from 'next/head';
 import SearchBar from '../components/SearchBar'
 import Shortcuts from '../components/Shortcuts'
 import SettingsButton from '../components/SettingsButton'
 import SettingsPopup from '../components/SettingsPopup'
-import { useAppSelector } from '../lib/hooks'
+import { useAppDispatch, useAppSelector } from '../lib/hooks'
+import { load } from '../lib/newtabSlice'
 
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const [loaded, setLoaded] = useState(false)
+  const dispatch = useAppDispatch()
   const bg = useAppSelector(state => state.bg)
   const bgColor = useAppSelector(state => state.bgColor)
+
+  useEffect(() => {
+    if (!loaded) {
+      dispatch(load())
+      setLoaded(true)
+    }
+  })
 
   return (
     <>
