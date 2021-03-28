@@ -38,7 +38,7 @@ export const newtabSlice = createSlice({
         strage.push(localStorage.getItem(key))
       }
 
-      if (strage.indexOf('undefined') === -1) {
+      if (strage.indexOf(null) === -1) {
         state.bg = strage[0]
         state.bgColor = strage[1]
         state.shortcuts = toRedux(strage[2])
