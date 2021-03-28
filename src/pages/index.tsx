@@ -10,38 +10,31 @@ import { load } from '../lib/newtabSlice'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const [loaded, setLoaded] = useState(false)
   const dispatch = useAppDispatch()
   const bg = useAppSelector(state => state.bg)
   const bgColor = useAppSelector(state => state.bgColor)
-  const newtabRef = useRef() as React.MutableRefObject<HTMLInputElement>
+  const coverRef = useRef() as React.MutableRefObject<HTMLInputElement>
+
+  const [progress, setProgress] = useState('none')
 
   useEffect(() => {
-    if (!loaded) {
-      const loadLocalStrage = async () => dispatch(load())
-      
-      const preloadBG = async () => {
-        if (bg !== '') {
-          let img = document.createElement('img')
-          img.src = bg
-          img.addEventListener('load', () => {
-            newtabRef.current.classList.add('fadein')
-          }, false)
-        }
-        else {
-          newtabRef.current.classList.add('fadein')
-        }
-      }
+    switch (progress) {
+      case 'none':
+        dispatch(load())
+        setProgress('loadedState')
+        break
 
-      const end = async () => setLoaded(true)
+      case 'loadedState':
+        let img = document.createElement('img')
+        img.src = bg
+        img.addEventListener('load', () => {
+          coverRef.current.classList.add('fadeout')
+        }, false)
+        setProgress('complated')
+        break
 
-      const allProcess = async () => {
-        await loadLocalStrage()
-        await preloadBG()
-        await end()
-      }
-
-      allProcess()
+      case 'complated':
+        break
     }
   })
 
@@ -53,12 +46,13 @@ export default function Home() {
 
       <div
         className={styles.newtab}
-        ref={newtabRef}
         style={{
           backgroundImage: `url("${bg}")`,
           backgroundColor: bgColor
         }}
       >
+
+        <div className={styles.cover} ref={coverRef}>aaa</div>
 
         <SettingsPopup />
 

@@ -15,11 +15,11 @@ export interface NewtabState extends UserSettingsInfo {
 }
 
 const initialState: NewtabState = {
-  bg: '',
+  bg: './assets/img/demo1.jpg',
   bgColor: '#ffffff',
   shortcuts: [],
   searchEngine: 'Google',
-  textColor: 'black',
+  textColor: 'white',
   shortcutsIsShow: true,
   formIsShow: false,
   settingsPopupIsShow: false,
