@@ -13,7 +13,6 @@ const SearchBarOption: React.FC = () => {
   }
 
   const changeSearchEngine = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log(e.target.value)
     dispatch(setSearchEngine(e.target.value as SearchEngine))
   }
 
