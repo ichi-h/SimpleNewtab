@@ -6,6 +6,13 @@ body {
   font-size: 62.5%;
 }
 
+@media (prefers-color-scheme: dark) {
+  body { background-color: black; }
+}
+@media (prefers-color-scheme: light) {
+  body { background-color: white; }
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -17,6 +24,19 @@ a {
   box-sizing: border-box;
 }
 
+
+/* Animation */
+.fadein {
+  opacity: 0;
+  animation: fadein .3s ease forwards;
+}
+
+  @keyframes fadein {
+    100% { opacity: 1; }
+  }
+
+
+/* Button */
 input[type="button"],
 input[type="submit"] {
   background: none;
@@ -61,6 +81,7 @@ input[type="submit"] {
     input[type="button"].btn-cancel:active {
       background-color: #c7ccda;
     }
+
 
 /* fontello */
 .icon-cog:before {

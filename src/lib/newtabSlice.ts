@@ -15,7 +15,7 @@ export interface NewtabState extends UserSettingsInfo {
 }
 
 const initialState: NewtabState = {
-  bg: 'url("./assets/img/demo1.jpg")',
+  bg: '',
   bgColor: '#ffffff',
   shortcuts: [],
   searchEngine: 'Google',
@@ -68,8 +68,7 @@ export const newtabSlice = createSlice({
     },
 
     setBG: (state, action: PayloadAction<string>) => {
-      const url = `url("${action.payload}")`
-      state.bg = url
+      state.bg = action.payload
     },
 
     setBGColor: (state, action: PayloadAction<string>) => {

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Head from 'next/head';
 import SearchBar from '../components/SearchBar'
 import Shortcuts from '../components/Shortcuts'
@@ -14,11 +14,34 @@ export default function Home() {
   const dispatch = useAppDispatch()
   const bg = useAppSelector(state => state.bg)
   const bgColor = useAppSelector(state => state.bgColor)
+  const newtabRef = useRef() as React.MutableRefObject<HTMLInputElement>
 
   useEffect(() => {
     if (!loaded) {
-      dispatch(load())
-      setLoaded(true)
+      const loadLocalStrage = async () => dispatch(load())
+      
+      const preloadBG = async () => {
+        if (bg !== '') {
+          let img = document.createElement('img')
+          img.src = bg
+          img.addEventListener('load', () => {
+            newtabRef.current.classList.add('fadein')
+          }, false)
+        }
+        else {
+          newtabRef.current.classList.add('fadein')
+        }
+      }
+
+      const end = async () => setLoaded(true)
+
+      const allProcess = async () => {
+        await loadLocalStrage()
+        await preloadBG()
+        await end()
+      }
+
+      allProcess()
     }
   })
 
@@ -30,8 +53,9 @@ export default function Home() {
 
       <div
         className={styles.newtab}
+        ref={newtabRef}
         style={{
-          backgroundImage: bg,
+          backgroundImage: `url("${bg}")`,
           backgroundColor: bgColor
         }}
       >

@@ -7,8 +7,10 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-}
 
+  transition: .1s;
+  opacity: 0;
+}
 
 /* content */
 .content {
