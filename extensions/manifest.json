@@ -5,6 +5,6 @@
   "version": "0.0.1",
   "permissions" : [],
   "chrome_url_overrides" : {
-    "newtab": "./index.html"
+    "newtab": "./dist/index.html"
   }
 }
