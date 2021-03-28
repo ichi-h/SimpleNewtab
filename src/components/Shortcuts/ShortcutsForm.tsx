@@ -85,7 +85,7 @@ const ShortcutsPopup: React.FC = () => {
           <input
             className="btn-ok"
             type="submit"
-            value="Add"
+            value="OK"
           />
         </div>
       </form>

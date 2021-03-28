@@ -41,7 +41,7 @@ const SettingsPopup: React.FC = () => {
           <input
             className="btn-cancel"
             type="button"
-            value="close"
+            value="Cancel"
             onClick={onCloseButtonClick}
           />
           <input
