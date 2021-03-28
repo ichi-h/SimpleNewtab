@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../lib/hooks'
 import { save, setShortcutItem, toggleForm } from '../../lib/newtabSlice'
 
@@ -10,12 +10,6 @@ const ShortcutsPopup: React.FC = () => {
   const dispatch = useAppDispatch()
   const [name, setName] = useState('')
   const [url, setURL] = useState('')
-  const inputRef = useRef() as React.MutableRefObject<HTMLInputElement>
-
-  useEffect(() => {
-    if (!formIsShow) return
-    inputRef.current.focus()
-  })
 
   const onNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value)
@@ -63,7 +57,6 @@ const ShortcutsPopup: React.FC = () => {
             id="form-name"
             type="text"
             name="name"
-            ref={inputRef}
             defaultValue={name}
             required={true}
             onChange={onNameChange}
