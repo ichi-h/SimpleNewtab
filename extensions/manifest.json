@@ -1,8 +1,8 @@
 {
-  "name": "simple-newtab",
+  "name": "Simple Newtab",
   "manifest_version": 2,
-  "description": "An extention to custumize newtab",
-  "version": "0.0.1",
+  "description": "An extension to customize the new tab page simply.",
+  "version": "0.1.0",
   "permissions" : [],
   "chrome_url_overrides" : {
     "newtab": "./dist/index.html"
