@@ -2,7 +2,7 @@
   "name": "Simple Newtab",
   "manifest_version": 2,
   "description": "An extension to customize the new tab page simply.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "permissions" : [],
   "chrome_url_overrides" : {
     "newtab": "./dist/index.html"
