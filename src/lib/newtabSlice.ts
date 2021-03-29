@@ -33,22 +33,15 @@ export const newtabSlice = createSlice({
 
   reducers: {
     load: state => {
-      const strage: string[] = []
-      for (let key of keys) {
-        strage.push(localStorage.getItem(key))
-      }
+      state.bg = localStorage.getItem('bg')
+      state.bgColor = localStorage.getItem('bgColor')
+      state.shortcuts = toRedux(localStorage.getItem('shortcuts'))
+      state.searchEngine = localStorage.getItem('searchEngine') as SearchEngine
+      state.textColor = localStorage.getItem('textColor') as TextColor
 
-      if (strage.indexOf(null) === -1) {
-        state.bg = strage[0]
-        state.bgColor = strage[1]
-        state.shortcuts = toRedux(strage[2])
-        state.searchEngine = strage[3] as SearchEngine
-        state.textColor = strage[4] as TextColor
-
-        const toBoolean = (str: string) => str.toLowerCase() === 'true'
-        state.shortcutsIsShow = toBoolean(strage[5])
-        state.searchBarIsShow = toBoolean(strage[6])
-      }
+      const toBoolean = (str: string) => str.toLowerCase() === 'true'
+      state.shortcutsIsShow = toBoolean(localStorage.getItem('shortcutsIsShow'))
+      state.searchBarIsShow = toBoolean(localStorage.getItem('searchBarIsShow'))
     },
 
     save: state => {
