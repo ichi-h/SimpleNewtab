@@ -71,7 +71,7 @@ export default function Home() {
         }}
       >
 
-        <div className={styles.cover} ref={coverRef}>aaa</div>
+        <div className={styles.cover} ref={coverRef}></div>
 
         <SettingsPopup />
 
